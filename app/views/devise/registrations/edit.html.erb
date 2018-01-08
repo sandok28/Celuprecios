@@ -1,0 +1,82 @@
+<div class="row center-xs">
+  <div class="col-xs-10 col-md-8 border-5 top-space">
+    <div class="box text-left ">
+
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field ">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "from-control"%>
+        </div>
+        
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>
+           Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password, "Nueva contraseña:" %>
+          <i>(Si no desea cambiar la contraseña, deje los espacios en blanco)</i> <br />
+          <%= f.password_field :password, autocomplete: "off", class: "from-control" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em>Minimo <%= @minimum_password_length %> caracteres </em>
+          <% end %>
+        </div> 
+
+        <div class="field">
+          <%= f.label :password_confirmation, "Confirma nueva contraseña:" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "from-control" %>
+        </div>
+        
+
+        <div class="field">
+        <%= f.label :current_password, "Contraseña actual es requerida para realizar los cambios:" %> <br />
+        <%= f.password_field :current_password, autocomplete: "off", class: "from-control" %>
+        </div>
+
+        <div class="field">
+        <%= f.label :name, "Nombre:" %><br />
+        <%= f.text_field :name, placeholder: "Nombre completo", class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <div class="field">
+            Foto actual:<br />
+            <%= image_tag current_user.photo.url(:normal) %>
+          </div>
+        Actualizar foto:  <%= f.file_field :photo %>
+        </div>
+
+        <div class="field">
+        <%= f.label :city, "Ciudad" %><br />
+        <%= f.text_field :city, placeholder: "Ciudad", class: "from-control" %>
+        </div>
+
+        <div class="field">
+        <%= f.label :celular, "Celular" %><br />
+        <%= f.text_field :celular, placeholder: "Celular", class: "from-control" %>
+        </div>
+
+        <div class="field">
+        <%= f.label :facebook, "Link de facebook" %><br />
+        <%= f.text_field :facebook, placeholder: "https://www.facebook.com/groups/1756644751268182/", class: "from-control"  %>
+        </div>
+
+        <div class="actions center-xs">
+        <%= f.submit "Actualizar", class: "btn white be-blue" %>
+        </div>
+      <% end %>
+
+      <h3>Cancelar mi cuenta</h3>
+
+      <p><%= button_to "Darme de baja", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>

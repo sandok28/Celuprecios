@@ -1,0 +1,58 @@
+<div class="row center-xs">
+  <div class="col-xs-10 col-md-8 border-2 top-space">
+    <div class="box text-left ">
+      <h2 class="text-center">Crear cuenta</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "Contraseña:" %>
+          <% if @minimum_password_length %>
+          <em> (Minimo <%= @minimum_password_length %> caracteres)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "Confirma contraseña:" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :name, "Nombre:" %><br />
+          <%= f.text_field :name, placeholder: "Nombre completo", class: "from-control" %>
+        </div>
+        
+        <div class="field">
+         Foto:  <%= f.file_field :photo %>
+        </div>
+
+        <div class="field">
+          <%= f.label :city, "Ciudad" %><br />
+          <%= f.text_field :city, placeholder: "Ciudad", class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :celular, "Celular" %><br />
+          <%= f.text_field :celular, placeholder: "Celular", class: "from-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :facebook, "Link de facebook" %><br />
+          <%= f.text_field :facebook, placeholder: "https://www.facebook.com/groups/1756644751268182/", class: "from-control"  %>
+        </div>
+
+        <div class="actions center-xs">
+          <%= f.submit "Registrarse", class: "btn white be-blue"%>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

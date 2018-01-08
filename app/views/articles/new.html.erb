@@ -1,0 +1,158 @@
+<%@close="close"%>
+
+<%= render "articles/standar" %>
+<div style="width: 80%; margin: 0 auto;">
+	<%= form_for(@article) do |f| %>
+		<% @article.errors.full_messages.each do |message| %>
+			<div class="be-red top-space">
+				<%= message %>
+			</div>
+		<%end%>
+		<div class="field">
+			<% if user_signed_in? && current_user.is_admin_user? %>
+				<%= f.label :priority, "Asignar prioridad: " %>
+				<%= select_tag(:"article[priority]", options_for_select([['Ninguna prioridad', "desactivo"],['Primera pagina', 'activo1'], ['Segunda pagina', 'activo2'],['Tercera pagina', 'activo3']], 'desactivo'))%>
+			<%end%>
+		</div>
+		<div class="field">
+			<div class="row">
+				<%= f.label :brand_id, "Marca:", class: "col-xs-1" %> 
+				<p class="col-xs red no-margin">Si no encuentras tu marca intenta buscar tu celular en "otras marcas"</p> <br />
+			</div>
+			
+			<%= f.collection_select :brand_id, Brand.order(:name), :id, :name, class: "from-control", include_blank: true %>
+			
+
+		</div>
+		<div id="modelo" class="field" style="display: none;">
+			<div class="row">
+				<%= f.label :phone_id, "Modelo:", class: "col-xs-1" %> 
+				<p class="col-xs no-margin" >
+					Si no encuentras tu celular puedes agregar la referencia 
+					<%= link_to "agregar la referencia", new_phone_path, style: " color: blue !important; text-decoration: underline;" %>
+				</p>
+				<br />
+			</div>
+			
+			<%= f.grouped_collection_select :phone_id, Brand.order(:name), :phones, :name, :id, :name, class: "from-control"%>
+		</div>
+
+		<div class="field", >
+			<%= f.label :precio, "Precio:" %><br />
+			<%= f.text_field :precio, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :precio_minimo, "Precio minimo:" %><br />
+			<%= f.text_field :precio_minimo, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :ciudad, "Ciudad:" %><br />
+			<%= f.text_field :ciudad, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :celular, "Numero telefonico de contacto" %><br />
+			<%= f.text_field :celular, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :estado_fisico, "Estado fisico:" %><br />
+			<%= select_tag :estado_fisico, options_for_select((1..10).to_a, nil), name: "article[estado_fisico]" %>
+			<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
+		</div>
+		<div class="field", >
+			<%= f.label :estado_funcional, "Estado funcional:" %><br />
+			<%= select_tag :estado_funcional, options_for_select((1..10).to_a, nil), name: "article[estado_funcional]" %>
+			<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
+		</div>
+		<div class="">
+			<h3 id="myBtn" style= " color: blue !important; text-decoration: underline;"> Ver estandar ---> </h3>
+			<h3 id="myBtn2" style= "display: none;"></h3>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 List-without-points">
+				<h1>Se entrega con:</h1>
+				
+				<ul class="no-padding">
+					<li>
+						<%= check_box_tag("article[caja]", "si" ) %>
+						<%= label_tag(:caja, "Caja") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[garantia]", "si") %>
+						<%= label_tag(:garantia, "Garantia") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[factura]", "si") %>
+						<%= label_tag(:factura, "Factura") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[audifonos]", "si") %>
+						<%= label_tag(:audifonos, "Audifonos") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[cargador]", "si") %>
+						<%= label_tag(:cargador, "Cargador") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[vidriotemplado]", "si") %>
+						<%= label_tag(:vidriotemplado, "Vidriotemplado") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[funda]", "si") %>
+						<%= label_tag(:funda, "Funda") %>
+					</li>
+				</ul>
+			</div>
+			<div class="col-xs-6 List-without-points">
+				<h1>Formas de pago</h1>
+				<ul class="no-padding">
+					<li>
+						<%= check_box_tag("article[cambio]", "si") %>
+						<%= label_tag(:cambio, "Cambio por otra cosa") %>
+					</li>
+					<li>
+						<%= check_box_tag("article[efectivo]", "si") %>
+						<%= label_tag(:efectivo, "Efectivo") %>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="field", >
+			<%= f.label :comentario, "Comentarios que desee agregar:" %><br />
+			<%= f.text_area :comentario, size: "12x4", class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :caracteristicas, "Caracteristicas del celular:" %><br />
+			<%= f.text_area :caracteristicas, size: "12x4", class: "from-control"%>
+		</div>
+
+		<div class="field List-without-points">
+			<h2>
+			Fotos del celular 
+			
+			</h2>
+
+			<ul class="no-padding">
+				<li>
+				<p class="red no-margin" style="font-size: 1em">La primera foto es obligatoria</p> 
+					Foto 1:  <%= f.file_field :foto1%>
+				</li>
+				<li>
+					Foto 2:  <%= f.file_field :foto2%>
+				</li>
+				<li>
+					Foto 3:  <%= f.file_field :foto3%>
+				</li>
+				<li>
+					Foto 4:  <%= f.file_field :foto4%>
+				</li>
+			</ul>
+		</div>
+		
+
+		<div class="field">
+			<%= f.submit "Guardar", class: "btn white be-blue" %>
+		</div>
+	<%end%>
+</div>
+

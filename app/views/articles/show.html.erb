@@ -1,0 +1,322 @@
+
+<%= render "articles/standar" %>
+<div class="row top-space letra-lucida-grande">
+	<div class="row col-xs-6 ">
+		<div class="col-xs-12">
+			<h2 class="no-margin letra-times-new-roman">
+				<%= @article.phone.name%>
+			</h2>
+		</div>
+		<div id="coverslidesfondo" class="col-xs-12" style="display: none;">
+			<% if  !@article.foto1_file_name.nil? %>
+				<%= link_to (image_tag @article.foto1.url(:mini))%>
+			<%end%>
+		</div>
+		<div id="coverslides" class="col-xs-12 no-padding ">
+			<div class="<%= 'slides' unless @cont == 1 %>">
+				<% if  !@article.foto1_file_name.nil? %>
+					<%= link_to (image_tag @article.foto1.url(:mini)), photo_article_path(1,@article.id), data: { turbolinks: false}%>
+				<%end%>
+				<% if  !@article.foto2_file_name.nil? %>
+					<%= link_to (image_tag @article.foto2.url(:mini)), photo_article_path(2,@article.id), data: { turbolinks: false} %>
+				<%end%>
+				<% if  !@article.foto3_file_name.nil? %>
+					<%= link_to (image_tag @article.foto3.url(:mini)), photo_article_path(3,@article.id), data: { turbolinks: false} %>
+				<%end%>
+				<% if  !@article.foto4_file_name.nil? %>
+					<%= link_to (image_tag @article.foto4.url(:mini)), photo_article_path(4,@article.id), data: { turbolinks: false} %>
+				<%end%>
+			</div>
+			<% if @cont > 1 %>
+				<script >
+					$(function(){
+				      $(".slides").slidesjs({
+				      	
+				      });
+				    });
+				</script> 
+			<%end%>
+		</div>
+		
+		<div class="col-xs-12 field  text-justify border-5" >
+			<h4 class="no-margin letra-times-new-roman">Caracteristicas del telefono: </h4>
+			<%= @article.caracteristicas.truncate(280) %>
+		</div>
+		<div class="col-xs-12 field  text-justify border-5" >
+			<h4 class="no-margin letra-times-new-roman">Comentarios del vendedor:</h4>
+			<%= @article.comentario.truncate(280) %>
+		</div>
+	</div>
+	<div class="row col-xs-6 no-padding be-small">
+		<div class="col-xs-12">
+			<div class="row col-xs-12 center-xs">
+				<div class="row col-xs-11 text-left be-blue letra-times-new-roman" style="border-radius: 15px; font-size: 1.5em;">
+					<div class="col-xs-2 last-xs" style="padding-top: 5px;">
+						<% if  @article.user.photo_file_name.nil? %>
+							<%= image_tag "new_perfil_mini.png", class: "circular" %>
+						<%else%>
+							<%= image_tag @article.user.photo.url(:mini), class: "circular" %>
+						<%end%>
+						
+					</div>
+					
+					<%= link_to @article.user.name, usershow_path(@article.user.id),class: "col-xs-10", style: "padding-top: 5px;"%>
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Precio: 
+				</div>
+				<div class="col-xs-6 ">
+					<%= number_to_currency(@article.precio, precision: 0) %>
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Precio minimo:
+				</div>
+				<div class="col-xs-6">
+					<%= number_to_currency(@article.precio_minimo, precision: 0)  %>
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Ciudad:
+				</div>
+				<div class="col-xs-6 ">
+					<%= @article.ciudad %>
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Telefono:
+				</div>
+				<div class="row col-xs-6">
+					<%= image_tag "logo_whatsapp.png", class: "col-xs-2 no-padding-right" %>
+					<p class="col-xs-10 no-margin no-padding-left"><%= @article.celular %></p> 
+					
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Estado fisico:
+				</div>
+				<div class="col-xs-6">
+					
+					<div id="myBtn" style= " color: blue !important; text-decoration: underline;"><%= @article.estado_fisico %> Ver estandar</div>
+				</div>
+			</div>
+			<div class="row col-xs-12 top-space">
+				<div class="col-xs-6">
+					Estado funcional:
+				</div>
+				<div class="col-xs-6" >
+					
+					<div id="myBtn2" style= " color: blue !important; text-decoration: underline;"><%= @article.estado_funcional%> Ver estandar</div>
+				</div>
+			</div>
+			<hr class="col-xs-12 linea">
+			<div class="row col-xs-12">
+				<h3 class="col-xs-12 no-margin letra-times-new-roman negrilla">Se entrega con</h3>
+				
+				<div class="col-xs-12 List-without-points top-space" >
+					<ul class="row no-padding no-margin">
+						<li class="col-xs-3 " style="padding-right: 0px;">
+							<%if @article.may_sicaja? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Caja
+						</li>
+						<li class="col-xs-3 no-padding ">
+							<%if @article.may_sifunda? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Funda
+						</li>
+						<li class="col-xs-3 no-padding ">
+							<%if @article.may_sigarantia? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Garantia
+						</li>
+						<li class="col-xs-3" style="padding-right: 0px;">
+							<%if @article.may_sifactura? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Factura
+						</li>
+					</ul>
+				</div>
+				
+				<div class="col-xs-12 List-without-points no-padding top-space" >
+					<ul class="row no-padding no-margin" style="padding-right: 0px;">
+						<li class="col-xs-4 ">
+							<%if @article.may_siaudifonos? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Audifonos
+						</li>
+						<li class="col-xs-3 no-padding">
+							<%if @article.may_sicargador? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Cargador
+						</li>
+						<li class="col-xs-5 no-padding">
+							<%if @article.may_sividriotemplado? %>
+								<%= image_tag "check.png" %>
+							<%else%>
+								<%= image_tag "checked.png" %>
+							<%end%>
+							Vidrio templado
+						</li>
+						
+					</ul>
+				</div>
+				<hr class="col-xs-12 linea">
+				<h3 class="col-xs-12 no-margin  letra-times-new-roman negrilla">Formas de pago</h3>
+				<div class="row col-xs-12 top-space" >
+					<div class="col-xs-12 List-without-points ">
+						<ul class="row no-padding no-margin">
+							<li class="col-xs-6">
+								<%if @article.may_sicambio? %>
+									<%= image_tag "check.png" %>
+								<%else%>
+									<%= image_tag "checked.png" %>
+								<%end%>
+								Cambio
+							</li>
+							<li class="col-xs-6">
+								<%if @article.may_siefectivo? %>
+									<%= image_tag "check.png" %>
+								<%else%>
+									<%= image_tag "checked.png" %>
+								<%end%>
+								Efectivo
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="row col-xs-12 contrato-font top-space" style="padding-left: 22em;">
+				<div class="col-xs-12 "	style="margin-left: 5em;">
+					<%= image_tag "Contrato.png" %>
+				</div>
+				<div class="col-xs-3">
+					<%= image_tag "contrato.jpg" %>
+				</div>
+				<div class="col-xs-9 top-space">
+					<%= link_to 'Contrato de compra y venta de Celular', download_contrato_path, style: " color: blue !important; text-decoration: underline;", data: { turbolinks: false} %>
+				</div>
+				<div class="col-xs-12">
+					Con ese contrato podras legalizar la compra o venta del telrefono  
+				</div>
+					
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row border-5 top-space center-xs" style="display: none;">
+	<div class="row col-xs-12 center-xs">
+		<h1 class="col-xs-8 text-center be-black white no-margin ">
+			Asesoria a la hora de comprar
+		</h1>
+	</div>
+	<div class="row col-xs-10 top-space">
+		<div class="col-xs-6  bottom-space">
+			<%= image_tag "contrato.jpg" %>
+			<%= link_to 'Contrato de compra y venta de Celular', download_contrato_path, style: " color: blue !important; text-decoration: underline;" %></br>
+			Con ese contrato podras legalizar la compra o venta del teefono  	
+		</div>
+		<div class="col-xs-6 top-space bottom-space">
+			Contactaos nosotros te asesoramos </br>
+			telfono: 3125630214</br>
+			email: XXX@gmail.com	
+		</div>
+	</div>
+</div>
+<div class="row top-space" >
+	<div class="row col-xs-12  letra-times-new-roman">
+			<div class="col-xs-12">
+				<%= form_for(@question ) do |f| %>
+					<% @question.errors.full_messages.each do |message| %>
+						<div class="be-red  white top-space">
+							<%= message %>
+						</div>
+					<%end%>
+					<div class="row center-xs">
+						<div class="row col-xs-10  border-5">
+							<div class="row col-xs-12 center-xs ">
+								<h2 class="col-xs-10 text-center no-margin" style="font-size: 1em;">
+									< Has una pregunta >
+								</h2>
+							</div>
+							<div class="col-xs-9">
+								<div class=" text-left bottom-space", >
+									<% if user_signed_in? %>
+										<%= f.label :body, "Pregunta #{current_user.name}"  %><br />
+									<%else%>
+
+										<%= f.label :body, "Inicia sesion y pregunta "  %><br />
+									<%end%>
+									<%= f.text_area :body, size: "12x1", placeholder: "Comentario", class: "from-control"%>
+								</div>
+								<div class="field " style=" display: none", >
+									<%= f.label :article_id %><br />
+									<%= f.text_field :article_id, class: "from-control", value: @article.id %>
+								</div>
+							</div>
+							<% if user_signed_in? %>
+								<div class="col-xd-3  center-xs top-space ">
+									<%= f.submit "Comentar", class: "btn white be-blue" %>
+								</div>
+							<%else%>
+								<a id="myBtnlogin2" style="margin-left: 1em;" >
+									<%= image_tag "Boton_de_iniciar_session.png", class: "vertical"  %>
+								</a>
+							<%end%>
+						</div>
+							
+					</div>
+				<%end%>
+			</div>
+	</div>
+</div>
+<h1 class="">Comentarios:</h1>
+<div class="row border-2 center-xs ">
+	<% @questions.each do |question|%>
+ 		<div class="text-left col-xs-11 top-space">
+ 			<% if question.user.photo_file_name.nil? %>
+				<%= image_tag "new_perfil_mini.png", class: "circular"  %>
+			<%else%>
+				<%= image_tag question.user.photo.url(:mini), class: "circular" %>
+			<%end%>
+ 			<%= question.user.name %>:
+ 			<%= question.body%>
+ 			<hr class="punteada no-margin">
+ 		</div>
+	<%end%>
+</div>
+<% if user_signed_in? %>
+    <% if current_user.id == @article.user.id || current_user.is_admin_user?%>
+    	<div class="field row center-xs">
+			<%= link_to "Eliminar", @article, method: :delete, class: "btn white be-blue top-space margin-lateral" %>
+			<%= link_to "Editar", edit_article_path , class: "btn white be-blue top-space margin-lateral" %>
+		</div>	
+    <%end%>
+<%end%>

@@ -1,0 +1,22 @@
+<div style="width: 80%; margin: 0 auto;">
+	<div>
+		<div class="field">
+			<h3 class="letra-times-new-roman text-center" style="font-size: 1.5em;"> Todas las marcas con telefonos </h3>
+			
+		</div>
+		<div class="row">
+			<% @brands.each do |brand|%>
+				
+				<div class="col-md-4 vertical">
+					<%= link_to (image_tag brand.logo.url(:normal)), phone_path(brand.id)  %>
+				</div>
+			<%end%>
+		</div>
+		<div class="field apple_pagination top-space">
+			<%= will_paginate @brands %>
+		</div>
+		<div class= "center-xs top-space">
+		<%= link_to "Agregar telefono", new_phone_path , class: "btn white be-blue" %>
+	</div>
+	</div>
+</div>

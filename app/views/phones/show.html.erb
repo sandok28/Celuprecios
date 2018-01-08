@@ -1,0 +1,11 @@
+<div>
+	<h3 class="letra-times-new-roman text-center" style="font-size: 1.5em;"> Telefonos Disponobles </h3>
+	<div class="row">
+		<% @phones.each do |phone|%>
+			<div class="col-md-3">
+				-> <%= link_to phone.name, edit_phone_path(phone.id) %> 
+			</div>
+		<%end%>
+	</div>
+	
+</div>

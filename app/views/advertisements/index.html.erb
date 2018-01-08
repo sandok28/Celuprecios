@@ -1,0 +1,13 @@
+<div style="width: 80%; margin: 0 auto;">
+ 	<div class="row center-xs">
+ 		<h3 class="letra-times-new-roman text-center " style="font-size: 1.5em;"> <%= link_to "Agregar Publicidad", new_advertisement_path,class: "cletra-times-new-roman btn " %> 
+ 		</h3>
+ 		<div class="col-xs-8 ">
+			<%= render @advertisements %>
+			<div class="field">
+				<h3><%= will_paginate @publications %></h3> 
+			</div>
+		</div> 
+ 	</div>
+ 	
+</div>

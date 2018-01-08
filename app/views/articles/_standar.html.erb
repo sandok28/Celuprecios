@@ -1,0 +1,41 @@
+<!-- The Modal -->
+
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+	    <div class="modal-header be-blue">
+	      <span class="close">&times;</span>
+	      <h2 class="no-margin">Estandar de estados</h2>
+	    </div>
+	    <div class="modal-body no-margin bottom-space left-space">
+		    <div class="row" style="margin: 10px 0px 10px 50px;">
+		    	<%cont2=0%>
+		    	<% @calificaciones.each do |calificacion| %>
+		    		<%cont=0%>
+		    		
+		    		<div class="row col-xs-6 center-xs no-padding">
+		    			<h3 class="no-margin col-xs-12 text-center ">
+		    			<%= "Estado Fisico" unless cont2 == 0%>
+		    			<%= "Estado Funcional" unless cont2 == 1%>
+		    			<% cont2 += 1 %>
+		    			</h3>
+		    			
+				    	<% calificacion.each do |especificacion| %>
+				    		<div class="row col-xs-10 text-left border-2 no-padding">
+						    	<div class="col-xs-2">
+					    			<%= cont += 1 %>
+					    		</div>
+					    		<div class="col-xs-10">
+					    			<%= especificacion %>
+					    		</div>
+					    	</div>
+				    	<%end%>
+				    </div>
+		    	<%end%>
+		    </div>
+	    </div>
+	    <div class="modal-footer be-blue text-center">
+			<h3 class="no-margin">Se recomienda usar este estandar</h3>
+		</div>
+	</div>
+</div>

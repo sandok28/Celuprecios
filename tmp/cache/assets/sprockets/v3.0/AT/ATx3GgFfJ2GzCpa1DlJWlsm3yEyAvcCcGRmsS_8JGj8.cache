@@ -1,0 +1,21 @@
+I" (function() {
+  jQuery(function() {
+    var phones;
+    phones = $('#article_phone').html();
+    console.log(phones);
+    return $('#article_brand').change(function() {
+      var brand, options;
+      brand = $('#article_brand :selected').text();
+      console.log(brand);
+      options = $(phones).filter("optgroup[label='" + brand + "']").html();
+      console.log(options);
+      if (options) {
+        return $('#article_phone').html(options);
+      } else {
+        return $('#article_phone').empy();
+      }
+    });
+  });
+
+}).call(this);
+:ET

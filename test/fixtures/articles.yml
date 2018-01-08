@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: one
+  user: one
+  precio: 1
+  precio_minimo: 1
+  estado_fisico: 1
+  estado_funcional: 1
+  cambio: MyString
+  caja: MyString
+  garantia: MyString
+  factura: MyString
+  audifonos: MyString
+  cargador: MyString
+  efectivo: MyString
+  trueque: MyString
+  comentario: MyText
+  ciudad: MyString
+  vidriotemplado: MyString
+  funda: MyString
+  caracteristicas: MyText
+  vendido: MyString
+
+two:
+  phone: two
+  user: two
+  precio: 1
+  precio_minimo: 1
+  estado_fisico: 1
+  estado_funcional: 1
+  cambio: MyString
+  caja: MyString
+  garantia: MyString
+  factura: MyString
+  audifonos: MyString
+  cargador: MyString
+  efectivo: MyString
+  trueque: MyString
+  comentario: MyText
+  ciudad: MyString
+  vidriotemplado: MyString
+  funda: MyString
+  caracteristicas: MyText
+  vendido: MyString

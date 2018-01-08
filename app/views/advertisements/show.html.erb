@@ -1,0 +1,78 @@
+<div style="width: 80%; margin: 0 auto;">
+	<h3 class="letra-times-new-roman text-center" style="font-size: 1.5em;"> Anunicio </h3>
+	<div class="row be-small ">
+		<div class="row center-xs text-left">
+			<div class="row col-xs-10">
+				<div class="col-xs-4 be-small top-space">
+					<div class="", >
+						<h3 class="no-margin">
+						<%= @advertisement.name%>
+						</h3>
+					</div>
+					<div class="slides">
+						<%= image_tag @advertisement.photo.url(:normal) %>
+					</div>
+				</div>
+				<div class="row col-xs-8 top-space">
+					<div class="col-xs-12 top-space">
+						<h2 class="white be-black text-center no-margin">Datos de la empresa</h2>
+					</div>
+					
+					<div class="col-xs-6">
+						Direccion web:
+					</div>
+					<div class="col-xs-6">
+						<%=link_to @advertisement.url.truncate(20),@advertisement.url, style: "color: blue !important; text-decoration: underline;" %>
+					</div>
+					<div class="col-xs-6">
+						Ciudad:
+					</div>
+					<div class="col-xs-6">
+						<%= @advertisement.ciudad %>
+					</div>
+					<div class="col-xs-6">
+						Telefono:
+					</div>
+					<div class="col-xs-6">
+						<%= @advertisement.phone %>
+					</div>
+					<div class="col-xs-6">
+						Direccion fisica:
+					</div>
+					<div class="col-xs-6">
+						<%= @advertisement.direccion %>
+					</div>
+					<div class="col-xs-6">
+						Titulo o slogan:
+					</div>
+					<div class="col-xs-6">
+						<%= @advertisement.slogan%>
+					</div>
+					<div class="col-xs-12 ">
+						Descripcion del anuncio:
+					</div>
+					<div class="col-xs-12 text-justify">
+						<%= @advertisement.body%>
+					</div>	
+				</div>
+			</div>
+		</div>
+		
+
+		<h1 class="col-xs-12"> PORTADA</h1>
+		<div class="col-xs-12 slides">
+			<%= image_tag @advertisement.cover.url(:normal), class: "border-5" %>
+		</div>
+	</div> 	
+	
+	
+	<% if user_signed_in? && current_user.is_admin_user? %>
+		<div class="field row center-xs">
+			<div >
+				<%= link_to "Eliminar", @advertisement, method: :delete, class: "btn white be-blue top-space margin-lateral" %>
+				<%= link_to "Editar", edit_advertisement_path , class: "btn white be-blue top-space margin-lateral" %>
+			</div>
+		</div>	
+	<%end%>
+	
+</div>

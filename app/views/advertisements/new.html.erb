@@ -1,0 +1,54 @@
+<div style="width: 80%; margin: 0 auto;">
+ 	
+	<h3 class="letra-times-new-roman text-center" style="font-size: 1.5em;"> Nuevo Anunicio </h3>
+	<%= form_for(@advertisement) do |f| %>
+		<% @advertisement.errors.full_messages.each do |message| %>
+			<div class="be-red  white top-space">
+				<%= message %>
+			</div>
+		<%end%>
+
+		<div class="field", >
+			<%= f.label :name, "Nombre de la empresa:" %><br />
+			<%= f.text_field :name, class: "from-control"%>
+		</div>
+		<div class="field", >
+			Foto:  <%= f.file_field :photo %>
+		</div>
+		<div class="field", >
+			<%= f.label :url, "Direccion web de la empresa:" %><br />
+			<%= f.text_field :url, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :phone, "Telefono de la empresa:" %><br />
+			<%= f.text_field :phone, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :ciudad, "Ciudad:" %><br />
+			<%= f.text_field :ciudad, class: "from-control"%>
+		</div>
+		<div class="field", >
+			<%= f.label :direccion, "Direccion fisica de la empresa:" %><br />
+			<%= f.text_field :direccion, class: "from-control"%>
+		</div>
+		
+		<div class="field", >
+			Portada del anuncio:  <%= f.file_field :cover%>
+		</div>
+		<div class="field", >
+			<%= f.label :slogan, "Titulo o slogan del anuncio:" %><br />
+			<%= f.text_field :slogan, class: "from-control"%>
+		</div>
+		<div class="field">
+			<%= select_tag(:"advertisement[state]", options_for_select([['Ninguna prioridad', "desactivo"],['Primera pagina', 'activo1'], ['Segunda pagina', 'activo2'],['Tercera pagina', 'activo3'],['DESACTIVAR PUBLICIDAD', 'inavilitado']], 'desactivo'))%>
+		</div>
+		<div class="field", >
+			<%= f.label :body, "Descripcion del anuncio:" %><br />
+			<%= f.text_area :body, size: "12x4", class: "from-control"%>
+		</div>
+
+		<div class="field">
+			<%= f.submit "Guardar", class: "btn white be-blue" %>
+		</div>
+	<%end%>
+</div>

@@ -1,0 +1,8 @@
+<div class="row center-xs top-space ">
+	<%= link_to "Ver tamaño original",  "#{@photo}", class: "btn white be-blue margin-lateral" %>
+	<%= link_to "Volver", article_path(@article.id), class: "btn white be-blue margin-lateral", data: { turbolinks: false} %>
+</div>
+<div class="slides top-space top-space" style="">
+	<%= image_tag @photo %>
+</div>
+

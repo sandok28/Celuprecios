@@ -1,0 +1,84 @@
+	<div class="row center-xs be-small" >
+		<div class="col-xs-7">
+			<div class=" ">	
+			<%= form_for(@publication) do |f| %>
+				<% @publication.errors.full_messages.each do |message| %>
+					<div class="be-red  white top-space">
+						<%= message %>
+					</div>
+				<%end%>
+				<div class="field text-left letra-times-new-roman" style="font-size: 0.9em;" >
+					<% if user_signed_in? %>
+						<% if current_user.photo_file_name.nil? %>
+							<%= image_tag "new_perfil_mini.png", class: "circular" %>
+						<%else%>
+							<%= image_tag current_user.photo.url(:mini), class: "circular" %>
+						<%end%>
+						<%= current_user.name %>
+					<%else%>
+					(Necesitas inicar sesion)
+					<%end%>
+					<%= f.label :body, " Publica que quieres comprar: " %><br />
+					<%= f.text_area :body, placeholder: "Describe el producto que quieres", class: "from-control"%>
+				</div>
+				<div class="row center-xs">
+					<% if user_signed_in? %>
+						<%= f.submit "Publicar", class: "btn white be-blue" %>
+					<%else%>
+						<a id="myBtnlogin2" style="" >
+							<%= image_tag "Boton_de_iniciar_session.png", class: "vertical"  %>
+						</a>
+					<%end%>
+				</div>
+			<%end%>
+		</div>
+		<%= render @articlepreferencial %>
+		<%= render @advertisementpreferencial %>
+ 		<% @publications.each do |publication| %>
+ 			<hr class="linea">
+ 			<div class="top-space ">
+ 				
+				<% if !publication.article.nil? %>
+					<%= render publication.article%>
+						
+				<%end%>
+				<% if !publication.advertisement.nil? %>
+					<%= render publication.advertisement%>
+				<%end%>
+				<% if !publication.body.nil? %>
+					
+					<div class="row ">
+						<div class="col-xs-10 text-left letra-times-new-roman">
+							<% if publication.user.photo_file_name.nil? %>
+								<%= image_tag "new_perfil_mini.png", class: "circular" %>
+							<%else%>
+								<%= image_tag publication.user.photo.url(:mini), class: "circular" %>
+							<%end%>
+
+              <%= link_to publication.user.name , usershow_path(publication.user.id) %>
+
+						</div>
+						<div class="col-xs-2 text-justify letra-lucida-grande">
+							<%= publication.user.city %>
+						</div>
+					</div>
+					<div class="col-xs-12 text-justify letra-lucida-grande" >
+						Telefono: <%= publication.user.celular %> </br>
+            <div style="font-size: 1.5em ">
+              <%= publication.body %>
+            </div>
+
+					</div> 
+					<% if user_signed_in? &&  current_user.id == publication.user.id%>
+						<div class="col-xs-12 text-justify letra-lucida-grande red">
+							<%= link_to "Eliminar", publication, :method => :delete %>
+						</div>
+					<%end%>
+				<%end%>
+ 			</div>
+		<%end%>
+	</div>
+</div>
+<div class="field apple_pagination top-space">
+<%= will_paginate @publications %>
+</div>

@@ -1,0 +1,73 @@
+I")	(function() {
+  $(function() {
+    return jQuery(function() {
+      var phones;
+      phones = $('#article_phone_id').html();
+      console.log(phones);
+      $('#article_brand_id').change(function() {
+        var brand, options;
+        brand = $('#article_brand_id :selected').text();
+        console.log(brand);
+        options = $(phones).filter("optgroup[label='" + brand + "']").html();
+        if (options) {
+          console.log("No debe entrar");
+          $('#modelo').show();
+          return $('#article_phone_id').html(options);
+        } else {
+          console.log("SI debe entrar");
+          $('#article_phone_id').html("<option value='nil'>No hay celulares disponibles</option>");
+          return $('#modelo').show();
+        }
+      });
+      $('#myBtn').click(function() {
+        console.log("boton btn!");
+        return $('#myModal').show();
+      });
+      $('#myBtn2').click(function() {
+        console.log("boton btn2!");
+        return $('#myModal').show();
+      });
+      $('.close').click(function() {
+        console.log("boton close!");
+        return $('#myModal').hide();
+      });
+      $('#myBtnlogin').click(function() {
+        console.log("boton myBtnlogin1!");
+        $('#logmodlogo').show();
+        $("#coverslides").hide();
+        return $("#coverslidesfondo").show();
+      });
+      $('#myBtnlogin2').click(function() {
+        console.log("boton myBtnlogin2!");
+        return $('#logmodlogo').show();
+      });
+      $('#myBtnlogin3').click(function() {
+        console.log("boton myBtnlogin3!");
+        $('#logmodlogo').show();
+        $("#coverslides").hide();
+        return $("#coverslidesfondo").show();
+      });
+      $('.logmod__close').click(function() {
+        console.log("boton closelogin!");
+        $('#logmodlogo').hide();
+        $("#coverslides").show();
+        return $("#coverslidesfondo").hide();
+      });
+      $('#contactoInfo').click(function() {
+        console.log("aca info");
+        return $('#contacto_info').show();
+      });
+      $('#acercaInfo').click(function() {
+        return $('#acerca_info').show();
+      });
+      $('#QuienesSomosInfo').click(function() {
+        return $('#QuienesSomos_info').show();
+      });
+      return $('#PoliticaInfo').click(function() {
+        return $('#Politica_info').show();
+      });
+    });
+  });
+
+}).call(this);
+:ET

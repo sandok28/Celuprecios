@@ -1,0 +1,30 @@
+
+<div class="row center-xs no-padding">
+	<% @advertisementsprincipal.each do |advertisement| %>
+		<div class="col-xs-12">
+			<%= link_to advertisement.url do %>
+			 	<div class="text-left  letra-lucida-grande">
+			 		<div >
+			 			<div class="letra-times-new-roman" style="font-size: 15px;">
+							<%= image_tag advertisement.photo.url(:mini), class: "circular" %>
+							<%= advertisement.name %>
+						</div>
+					 	<div class="">
+							<%= image_tag advertisement.cover.url(:mini), class: "circular"  %>
+						</div>
+						<div class="letra-lucida-grande" style="font-size: 10px; overflow:hidden;">
+							<%= advertisement.slogan %>
+						</div>
+						<div class=" letra-lucida-grande" style=" font-size: 10px; color: blue !important; text-decoration: underline; overflow:hidden;">
+							<%= advertisement.url.truncate(25)  %>
+						</div>
+						<div class=" letra-lucida-grande text-justify" style="font-size: 10px;">
+							<%= advertisement.body.truncate(90) %>
+						</div>
+			 		</div>
+				</div>
+			<%end%>
+		</div>	
+	<%end%>
+</div>
+

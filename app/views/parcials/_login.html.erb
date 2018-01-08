@@ -1,0 +1,86 @@
+<div id="logmodlogo" class="logmod" style="display: none;">
+  <div class="logmod__wrapper">
+    <span class="logmod__close">Close</span>
+    <div class="logmod__container">
+      <ul class="logmod__tabs">
+        <li data-tabtar="lgm-2"><a href="#">Iniciar session</a></li>
+        <li data-tabtar="lgm-1"><a href="#">Crear cuenta</a></li>
+      </ul>
+      <div class="logmod__tab-wrapper">
+      <div class="logmod__tab lgm-1">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Ingresa tus datos <strong>para crear una cuenta</strong></span>
+        </div>
+        <div class="logmod__form">
+
+
+          <%= form_for(User.new, as: "user", url: registration_path("user"), class: "simform") do |f| %>
+            
+
+            <div class="sminputs">
+              <div class="input full">
+              
+                <%= f.label :name,"Nombre:", class: "string optional" %>
+                <%= f.text_field :name, autofocus: true, placeholder: "Nombre", class: "from-control string optional", maxlength: "255" %>
+              </div>
+            </div>
+
+            <div class="sminputs">
+              <div class="input full">
+                <%= f.label :email, class: "string optional" %>
+                <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "from-control string optional", maxlength: "255" %>
+              </div>
+            </div>
+            
+            <div class="sminputs">
+              <div class="input string optional">
+
+                <%= f.label :password, "Contraseña *", class: "string optional" %>
+                <%= f.password_field :password, autocomplete: "off", class: "from-controlstring optional", maxlength: "255", size:"50", placeholder: "6 caracteres minimo"  %>
+                
+              </div>
+              <div class="input string optional">
+
+                <%= f.label :password_confirmation, "Confirma contraseña *", class: "string optional" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "from-control string optional", maxlength: "255", placeholder: "Confirmar contraseña", size:"50" %>
+              </div>
+            </div>
+            <div class="simform__actions">
+              <%= f.submit "Registrarse", class: "sumbit"%>
+              <span class="simform__actions-sidetext">Al crear una cuenta acepta nuestros Términos y Privacidad <a class="special" href="#" target="_blank" role="link">Términos y Privacidad</a></span>
+            </div> 
+          <% end %>
+        </div> 
+      </div>
+      <div class="logmod__tab lgm-2">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Ingresa tu email y contraseña <strong>para iniciar session</strong></span>
+        </div> 
+        <div class="logmod__form">
+          <%= form_for(User.new, as: "user", url: session_path("user"), class: "simform") do |f| %>
+            <div class="sminputs">
+              <div class="input full">
+                <%= f.label :email, "Email*", class: "string optional" %>
+                <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "from-control string optional", maxlength: "255", size:"50" %>
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input full">
+                <%= f.label :password, " Contraseña: ", class: "string optional"%>
+                <%= f.password_field :password, autocomplete: "off",class: "from-control string optional", maxlength: "255", size:"50", placeholder: "Contraseña" %>
+                            <span class="hide-password">Ver</span>
+              </div>
+            </div>
+            <div class="simform__actions" >
+              <%= f.submit "Ingresar", class: "sumbit"%>
+              <span class="simform__actions-sidetext" style="display: none;">
+                <a class="special" role="link" href="#">Forgot your password?<br>Click here</a>
+              </span>
+            </div> 
+          <% end %>
+        </div> 
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

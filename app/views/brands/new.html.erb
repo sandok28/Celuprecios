@@ -1,0 +1,21 @@
+<div style="width: 80%; margin: 0 auto;">
+ 	
+	<h3 class="letra-times-new-roman text-center" style="font-size: 1.5em;"> Nueva Marca </h3>
+	<%= form_for(@brand) do |f| %>
+		<% @brand.errors.full_messages.each do |message| %>
+			<div class="be-red  white top-space">
+				<%= message %>
+			</div>
+		<%end%>
+		<div class="field", >
+			<%= f.label :name, "Nombre:" %><br />
+			<%= f.text_field :name, placeholder: "Nombre", class: "from-control"%>
+		</div>
+		<div class="field">
+			Logo:  <%= f.file_field :logo%>
+		</div>
+		<div class="field">
+			<%= f.submit "Guardar", class: "btn white be-blue" %>
+		</div>
+	<%end%>
+</div>

@@ -1,0 +1,18 @@
+<%= link_to advertisement_path(advertisement.id) do %>
+ 	<div class="row">
+		<div class="col-xs-9 text-left letra-times-new-roman" style= "font-size: 20px;">
+			<%= image_tag advertisement.photo.url(:mini), class: "circular" %>
+			<%= advertisement.name  %>
+		</div>
+		<div class="col-xs-3 ">
+			<h4 class="text-center no-margin grey algo">Blog</h4>
+		</div>
+	</div>
+	<div class="text-justify letra-lucida-grande">
+		Telefono: <%= advertisement.phone %> </br> 
+		<%= advertisement.body.truncate(410) %>
+	</div>
+	<div class="slides top-space  no-margin">
+		<%= image_tag advertisement.cover.url(:normal), class: "border-5" %>
+	</div>
+<%end%>

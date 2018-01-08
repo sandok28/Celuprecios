@@ -1,0 +1,2335 @@
+/* line 1, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slides {
+  width: 100%;
+}
+
+/* line 6, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slides img {
+  width: 100%;
+}
+
+/* line 10, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.img-100 img {
+  width: 100%;
+}
+
+/* line 14, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slidesjs-pagination {
+  padding: 0px;
+  background: #E1E6FA;
+  list-style: none;
+  overflow: hidden;
+  margin: 0px;
+}
+
+/* line 23, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slidesjs-pagination li {
+  float: left;
+}
+
+/* line 26, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slidesjs-pagination li a {
+  display: block;
+  padding: 5px 46.3px;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* line 32, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slidesjs-pagination li a:hover {
+  background: #A3CDF4;
+}
+
+/* line 35, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slides .active {
+  background: #A3CDF4;
+}
+
+/* line 38, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.slidesjs-navigation {
+  background: #000;
+  color: #fff !important;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  display: none;
+}
+
+/* line 48, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 270px;
+  /* Location of the box */
+  padding-left: 200px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+/* line 64, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+/* The Close Button */
+/* line 90, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* line 97, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 103, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.modal-header {
+  padding: 2px 16px;
+  color: white;
+}
+
+/* line 107, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.modal-footer {
+  padding: 2px 10px;
+  color: white;
+}
+
+/* line 112, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/articles.scss */
+.modal-body {
+  margin: 0px !important;
+}
+.container-fluid,
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.row.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.col-xs,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-offset-0,
+.col-xs-offset-1,
+.col-xs-offset-2,
+.col-xs-offset-3,
+.col-xs-offset-4,
+.col-xs-offset-5,
+.col-xs-offset-6,
+.col-xs-offset-7,
+.col-xs-offset-8,
+.col-xs-offset-9,
+.col-xs-offset-10,
+.col-xs-offset-11,
+.col-xs-offset-12 {
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.col-xs {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-xs-1 {
+  -ms-flex-preferred-size: 8.33333333%;
+  flex-basis: 8.33333333%;
+  max-width: 8.33333333%;
+}
+
+.col-xs-2 {
+  -ms-flex-preferred-size: 16.66666667%;
+  flex-basis: 16.66666667%;
+  max-width: 16.66666667%;
+}
+
+.col-xs-3 {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-4 {
+  -ms-flex-preferred-size: 33.33333333%;
+  flex-basis: 33.33333333%;
+  max-width: 33.33333333%;
+}
+
+.col-xs-5 {
+  -ms-flex-preferred-size: 41.66666667%;
+  flex-basis: 41.66666667%;
+  max-width: 41.66666667%;
+}
+
+.col-xs-6 {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-xs-7 {
+  -ms-flex-preferred-size: 58.33333333%;
+  flex-basis: 58.33333333%;
+  max-width: 58.33333333%;
+}
+
+.col-xs-8 {
+  -ms-flex-preferred-size: 66.66666667%;
+  flex-basis: 66.66666667%;
+  max-width: 66.66666667%;
+}
+
+.col-xs-9 {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-xs-10 {
+  -ms-flex-preferred-size: 83.33333333%;
+  flex-basis: 83.33333333%;
+  max-width: 83.33333333%;
+}
+
+.col-xs-11 {
+  -ms-flex-preferred-size: 91.66666667%;
+  flex-basis: 91.66666667%;
+  max-width: 91.66666667%;
+}
+
+.col-xs-12 {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.col-xs-offset-0 {
+  margin-left: 0;
+}
+
+.col-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+
+.col-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+
+.col-xs-offset-3 {
+  margin-left: 25%;
+}
+
+.col-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+
+.col-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+
+.col-xs-offset-6 {
+  margin-left: 50%;
+}
+
+.col-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+
+.col-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+
+.col-xs-offset-9 {
+  margin-left: 75%;
+}
+
+.col-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+
+.col-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+
+.start-xs {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.center-xs {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.end-xs {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.top-xs {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.middle-xs {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.bottom-xs {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.around-xs {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.between-xs {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.first-xs {
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+.last-xs {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+@media only screen and (min-width: 48em) {
+  .container {
+    width: 49rem;
+  }
+
+  .col-sm,
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-offset-0,
+  .col-sm-offset-1,
+  .col-sm-offset-2,
+  .col-sm-offset-3,
+  .col-sm-offset-4,
+  .col-sm-offset-5,
+  .col-sm-offset-6,
+  .col-sm-offset-7,
+  .col-sm-offset-8,
+  .col-sm-offset-9,
+  .col-sm-offset-10,
+  .col-sm-offset-11,
+  .col-sm-offset-12 {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .col-sm {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-sm-1 {
+    -ms-flex-preferred-size: 8.33333333%;
+    flex-basis: 8.33333333%;
+    max-width: 8.33333333%;
+  }
+
+  .col-sm-2 {
+    -ms-flex-preferred-size: 16.66666667%;
+    flex-basis: 16.66666667%;
+    max-width: 16.66666667%;
+  }
+
+  .col-sm-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-sm-4 {
+    -ms-flex-preferred-size: 33.33333333%;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+  }
+
+  .col-sm-5 {
+    -ms-flex-preferred-size: 41.66666667%;
+    flex-basis: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+
+  .col-sm-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-sm-7 {
+    -ms-flex-preferred-size: 58.33333333%;
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%;
+  }
+
+  .col-sm-8 {
+    -ms-flex-preferred-size: 66.66666667%;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+  }
+
+  .col-sm-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-sm-10 {
+    -ms-flex-preferred-size: 83.33333333%;
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%;
+  }
+
+  .col-sm-11 {
+    -ms-flex-preferred-size: 91.66666667%;
+    flex-basis: 91.66666667%;
+    max-width: 91.66666667%;
+  }
+
+  .col-sm-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .col-sm-offset-0 {
+    margin-left: 0;
+  }
+
+  .col-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+
+  .col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+
+  .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+
+  .col-sm-offset-5 {
+    margin-left: 41.66666667%;
+  }
+
+  .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-sm-offset-7 {
+    margin-left: 58.33333333%;
+  }
+
+  .col-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+
+  .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-sm-offset-10 {
+    margin-left: 83.33333333%;
+  }
+
+  .col-sm-offset-11 {
+    margin-left: 91.66666667%;
+  }
+
+  .start-sm {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .center-sm {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .end-sm {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  .top-sm {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .middle-sm {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .bottom-sm {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .around-sm {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .between-sm {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .first-sm {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .last-sm {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .container {
+    width: 65rem;
+  }
+
+  .col-md,
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-offset-0,
+  .col-md-offset-1,
+  .col-md-offset-2,
+  .col-md-offset-3,
+  .col-md-offset-4,
+  .col-md-offset-5,
+  .col-md-offset-6,
+  .col-md-offset-7,
+  .col-md-offset-8,
+  .col-md-offset-9,
+  .col-md-offset-10,
+  .col-md-offset-11,
+  .col-md-offset-12 {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .col-md {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-md-1 {
+    -ms-flex-preferred-size: 8.33333333%;
+    flex-basis: 8.33333333%;
+    max-width: 8.33333333%;
+  }
+
+  .col-md-2 {
+    -ms-flex-preferred-size: 16.66666667%;
+    flex-basis: 16.66666667%;
+    max-width: 16.66666667%;
+  }
+
+  .col-md-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-md-4 {
+    -ms-flex-preferred-size: 33.33333333%;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+  }
+
+  .col-md-5 {
+    -ms-flex-preferred-size: 41.66666667%;
+    flex-basis: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+
+  .col-md-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-md-7 {
+    -ms-flex-preferred-size: 58.33333333%;
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%;
+  }
+
+  .col-md-8 {
+    -ms-flex-preferred-size: 66.66666667%;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+  }
+
+  .col-md-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-md-10 {
+    -ms-flex-preferred-size: 83.33333333%;
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%;
+  }
+
+  .col-md-11 {
+    -ms-flex-preferred-size: 91.66666667%;
+    flex-basis: 91.66666667%;
+    max-width: 91.66666667%;
+  }
+
+  .col-md-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .col-md-offset-0 {
+    margin-left: 0;
+  }
+
+  .col-md-offset-1 {
+    margin-left: 8.33333333%;
+  }
+
+  .col-md-offset-2 {
+    margin-left: 16.66666667%;
+  }
+
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-md-offset-4 {
+    margin-left: 33.33333333%;
+  }
+
+  .col-md-offset-5 {
+    margin-left: 41.66666667%;
+  }
+
+  .col-md-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-md-offset-7 {
+    margin-left: 58.33333333%;
+  }
+
+  .col-md-offset-8 {
+    margin-left: 66.66666667%;
+  }
+
+  .col-md-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-md-offset-10 {
+    margin-left: 83.33333333%;
+  }
+
+  .col-md-offset-11 {
+    margin-left: 91.66666667%;
+  }
+
+  .start-md {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .center-md {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .end-md {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  .top-md {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .middle-md {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .bottom-md {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .around-md {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .between-md {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .first-md {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .last-md {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .container {
+    width: 76rem;
+  }
+
+  .col-lg,
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-offset-0,
+  .col-lg-offset-1,
+  .col-lg-offset-2,
+  .col-lg-offset-3,
+  .col-lg-offset-4,
+  .col-lg-offset-5,
+  .col-lg-offset-6,
+  .col-lg-offset-7,
+  .col-lg-offset-8,
+  .col-lg-offset-9,
+  .col-lg-offset-10,
+  .col-lg-offset-11,
+  .col-lg-offset-12 {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .col-lg {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-lg-1 {
+    -ms-flex-preferred-size: 8.33333333%;
+    flex-basis: 8.33333333%;
+    max-width: 8.33333333%;
+  }
+
+  .col-lg-2 {
+    -ms-flex-preferred-size: 16.66666667%;
+    flex-basis: 16.66666667%;
+    max-width: 16.66666667%;
+  }
+
+  .col-lg-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-4 {
+    -ms-flex-preferred-size: 33.33333333%;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+  }
+
+  .col-lg-5 {
+    -ms-flex-preferred-size: 41.66666667%;
+    flex-basis: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+
+  .col-lg-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-7 {
+    -ms-flex-preferred-size: 58.33333333%;
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%;
+  }
+
+  .col-lg-8 {
+    -ms-flex-preferred-size: 66.66666667%;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+  }
+
+  .col-lg-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-lg-10 {
+    -ms-flex-preferred-size: 83.33333333%;
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%;
+  }
+
+  .col-lg-11 {
+    -ms-flex-preferred-size: 91.66666667%;
+    flex-basis: 91.66666667%;
+    max-width: 91.66666667%;
+  }
+
+  .col-lg-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .col-lg-offset-0 {
+    margin-left: 0;
+  }
+
+  .col-lg-offset-1 {
+    margin-left: 8.33333333%;
+  }
+
+  .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-lg-offset-4 {
+    margin-left: 33.33333333%;
+  }
+
+  .col-lg-offset-5 {
+    margin-left: 41.66666667%;
+  }
+
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-lg-offset-7 {
+    margin-left: 58.33333333%;
+  }
+
+  .col-lg-offset-8 {
+    margin-left: 66.66666667%;
+  }
+
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-lg-offset-10 {
+    margin-left: 83.33333333%;
+  }
+
+  .col-lg-offset-11 {
+    margin-left: 91.66666667%;
+  }
+
+  .start-lg {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .center-lg {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .end-lg {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  .top-lg {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .middle-lg {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .bottom-lg {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .around-lg {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .between-lg {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .first-lg {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .last-lg {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+/* line 4, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/home.scss */
+.container-4 {
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 11, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/home.scss */
+.container-4 input#keyword {
+  width: 270px;
+  height: 40px;
+  border: none;
+  font-size: 15pt;
+  float: left;
+  color: black;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 15px;
+}
+
+/* line 24, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/home.scss */
+.container-4 button.icon {
+  border: none;
+  height: 43px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+/* line 38, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/home.scss */
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon {
+  outline: none;
+  opacity: 1;
+  margin-left: -65px;
+}
+
+/* line 44, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/home.scss */
+.container-4:hover button.icon:hover {
+  background: white;
+}
+
+.apple_pagination {
+  
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1em 0em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span{
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+    margin: 1px 2px;
+    padding: 5px 10px;
+    display: inline-block;
+    border-top: 1px solid #fff;
+    text-decoration: none;
+    color: #717171;
+    font-size: smaller;
+    font-family: "Helvetica Neueu", Helvetica, Arial, sans-serif;
+    text-shadow: white 0 1px 0;
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -moz-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -ms-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -o-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: linear-gradient(top, #f9f9f9, #eaeaea);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9f9f9', EndColorStr='#eaeaea'); 
+     }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+     }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+  .gap{
+    box-shadow: 0 0 0 0 transparent !important;
+    border: 0 none !important;;
+    background: transparent !important;;
+    margin-left: 0 !important;;
+    margin-right: 0 !important;; 
+  }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+
+html,body{
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+}
+a,a:visited{
+	color: inherit !important;
+	text-decoration: none;
+}
+.circular{
+	border-radius: 15px;
+}
+.circular-max{
+	border-radius: 100px;
+}
+.vertical{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.scrollbar{
+	overflow: auto; 
+}
+.negrilla{
+	font-weight:bold !important;
+}
+.letra-arial{
+	font-family: Arial;
+	font-variant: normal;
+	font-weight: 100;
+}
+
+.letra-helvetica{
+	
+	font-family: helvetica;
+	
+	font-variant: normal;
+	font-weight: 100;
+}
+.letra-tahoma{
+	font-family: tahoma;
+	
+	font-variant: normal;
+	font-weight: 100;
+	font-size: 14px;
+	font-weight:bold;
+}
+
+.letra-lucida-grande{
+	font-family: 'Lucida Grande';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 14px;
+}
+.letra-times-new-roman{
+	font-family: 'Times New Roman';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 22px;
+}
+.border-5{
+	border: #57747F 5px solid;
+}
+.border-2{
+	border: #ECF2FC 2px solid;
+}
+.div-border-left{ 
+	border-left: 5px solid #ECF2FC;
+	height: 100%; 
+}
+.div-border-right{ 
+	border-right: 5px solid #ECF2FC; 
+	height: 100%; 
+}
+.imagen-redonda{
+	background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+.List-without-points ul{
+	list-style:none;
+}
+.margin-lateral,.container-center{
+	margin-right: 20px !important;
+  	margin-left: 20px !important;
+  	
+}
+.container-center{
+  	padding-right: 2rem;
+  	padding-left: 2rem;
+}
+.linea { 
+   margin-top: 1em;
+   border: 2px solid #C0CADA; 
+   border-radius: 300px /5px; 
+   height: 0px; 
+   text-align: center; 
+ }
+
+ .punteada {
+ 	border: 1px dashed grey; 
+ 	height: 0; 
+ 	width: 100%;
+ 	margin-top: 0px;
+ }
+.blue{
+	color: blue !important;
+}
+.red{
+	color: red !important;
+}
+.text-left{
+	text-align: left;
+}
+.be-grey{
+	background: #023059;
+}
+
+.btn{
+	background-color: inherit;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;	
+	font-size: 1.2em;
+	padding:  10px 20px;
+}
+#logo{
+	font-size: 1.2em;
+}
+.contrato-font{
+	font-size: 0.6em !important;
+}
+.no-margin{
+	margin: 0px !important;
+}
+.mini-margin{
+	margin: 5px;
+}
+.text-center{
+	text-align: center !important;
+}
+.text-justify{
+	text-align: justify-all; !important;
+}
+.text-right{
+	text-align: right;
+}
+.text-bottom{
+	vertical-align: text-bottom;
+}
+.text-justify{
+	text-align: justify;
+}
+
+.be-big{
+	font-size: 2em;
+}
+.be-small{
+	font-size: 1.3em;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+.be-blue{
+	background-color: #1977F3;
+}
+.be-black{
+	background-color: black;
+}
+.green{
+	color: green;
+}
+.white{
+	color: white;
+}
+.black{
+	color: black;
+}
+.grey{
+	color: #616161 !important;;
+}
+.large-padding{
+	padding: 10px 5px;
+}
+.total-padding{
+	padding: 20px 20px 20px 20px;
+}
+.total-margin{
+	margin: 20px 20px 20px 20px;
+}
+.field,.top-space,.actions{
+	margin-top: 1em;
+}
+.top-space-btn{
+	margin-top: 2.4em;
+	margin-left: 0.5em;
+}
+.bottom-space{
+	padding-bottom: 1em;
+}
+.backgraund-cover{
+	background-position: center;
+	background-size: cover;
+}
+.article-height{
+	height: 100px;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.algo{
+	font: oblique bold 120% cursive;
+	font-size: 1em;
+}
+.from-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 100%;
+	display: block;
+	padding: 10px 0px;
+	font-size: 1.2em;
+}
+.body-article{
+	position:absolute;
+	right: 0px;
+	left: 220px !important;
+	
+}
+.lateral-control{
+	position:absolute;
+	outline: none;
+	border: none;
+	display: block;
+	font-size: 1.2em;
+	height: 100%;
+}
+.no-padding-right{
+    padding-right: 0px !important;
+    
+}
+.left-space{
+    padding-left: : 1em !important;
+    
+}
+.left-space-max{
+    padding-left: 2em !important;
+    
+}
+.no-padding{
+	padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 0px !important;
+}
+.fondo-barra{
+	background: rgba(231,237,240,1);
+	background: -moz-linear-gradient(top, rgba(231,237,240,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(231,237,240,1)), color-stop(50%, rgba(216,225,231,1)), color-stop(51%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+	background: -webkit-linear-gradient(top, rgba(231,237,240,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
+	background: -o-linear-gradient(top, rgba(231,237,240,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
+	background: -ms-linear-gradient(top, rgba(231,237,240,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
+	background: linear-gradient(to bottom, rgba(231,237,240,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7edf0', endColorstr='#e0eff9', GradientType=0 );
+}
+/* line 2, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* line 13, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 18, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__wrapper {
+  display: block;
+  background: #FFF;
+  position: relative;
+  max-width: 550px;
+  border-radius: 4px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  margin: 120px auto;
+}
+
+/* line 27, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__close {
+  display: block;
+  position: absolute;
+  right: 50%;
+  background: url("http://imgh.us/close_white.svg") no-repeat scroll 0% 0% transparent;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  top: -72px;
+  margin-right: -24px;
+  width: 48px;
+  height: 48px;
+}
+
+/* line 41, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 45, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__container::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 50, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tab {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* line 58, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tab-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 63, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tab.show {
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+}
+
+/* line 68, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 73, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tabs::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 78, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tabs li.current__login a {
+  background: #FFF;
+  color: #333;
+}
+
+/* line 82, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tabs li a {
+  width: 50%;
+  position: relative;
+  float: left;
+  text-align: center;
+  background: #D2D8D8;
+  line-height: 72px;
+  height: 72px;
+  text-decoration: none;
+  color: #809191;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* line 97, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__tabs li a:focus {
+  outline: dotted 1px;
+}
+
+/* line 100, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__heading {
+  text-align: center;
+  padding: 12px 0 12px 0;
+}
+
+/* line 104, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__heading-subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  color: #888;
+  line-height: 48px;
+}
+
+/* line 111, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__form {
+  border-top: 1px solid #e5e5e5;
+}
+
+/* line 114, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__alter {
+  display: block;
+  position: relative;
+  margin-top: 7px;
+}
+
+/* line 119, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__alter::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 124, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.logmod__alter .connect:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+/* line 128, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 72px;
+  line-height: 72px;
+  text-decoration: none;
+}
+
+/* line 137, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 142, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect:focus, .connect:hover, .connect:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+
+/* line 146, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect__icon {
+  vertical-align: middle;
+  float: left;
+  width: 70px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* line 153, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect__context {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 157, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.facebook {
+  background: #3b5998;
+  color: #FFF;
+}
+
+/* line 161, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.facebook a {
+  color: #FFF;
+}
+
+/* line 164, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.facebook .connect__icon {
+  background: #283d68;
+}
+
+/* line 167, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.googleplus {
+  background: #dd4b39;
+  color: #FFF;
+}
+
+/* line 171, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.googleplus a {
+  color: #FFF;
+}
+
+/* line 174, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.connect.googleplus .connect__icon {
+  background: #b52f1f;
+}
+
+/* line 178, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform {
+  position: relative;
+}
+
+/* line 181, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions {
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* line 185, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 190, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions .sumbit {
+  height: 48px;
+  float: right;
+  color: #FFF;
+  width: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  background: #4CAF50;
+  margin-top: 7px;
+}
+
+/* line 200, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions .sumbit::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 205, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions-sidetext {
+  display: inline-block;
+  float: left;
+  width: 40%;
+  padding: 0 10px;
+  margin: 9px 0 0 0;
+  color: #8C979E;
+  text-align: center;
+  line-height: 24px;
+}
+
+/* line 216, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.simform__actions-sidetext::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 222, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* line 225, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 230, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 71px;
+  padding: 11px 24px;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: none;
+  float: left;
+  background-color: #FFF;
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 246, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input.active {
+  background: #eee;
+}
+
+/* line 249, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input.active .hide-password {
+  background: #eee;
+}
+
+/* line 252, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input.full {
+  width: 100%;
+}
+
+/* line 255, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+/* line 268, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .input input {
+  postion: relative;
+  display: inline-block;
+  height: 24px;
+  font-size: 15px;
+  line-height: 19.2px;
+  color: #555;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgba(75, 89, 102, 0.85);
+}
+
+/* line 287, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.sminputs .hide-password {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 15px;
+  border-left: 1px solid #e4e4e4;
+  font-size: 14px;
+  background: #FFF;
+  overflow: hidden;
+  color: #444;
+  cursor: pointer;
+  margin-top: 12px;
+  line-height: 48px;
+}
+
+/* line 303, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+html {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Lato", sans-serif;
+}
+
+/* line 309, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn, .simform__actions .sumbit {
+  display: inline-block;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  outline-offset: 0;
+  font-weight: 400;
+  box-shadow: none;
+  min-width: 90px;
+  padding: 10px 14px;
+}
+
+/* line 325, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.full, .simform__actions .full.sumbit {
+  width: 100%;
+}
+
+/* line 328, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.lg, .simform__actions .lg.sumbit {
+  min-width: 125px;
+  padding: 17px 14px;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+/* line 334, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.sm, .simform__actions .sm.sumbit {
+  min-width: 65px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+/* line 339, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.xs, .simform__actions .xs.sumbit {
+  min-width: 45px;
+  padding: 2px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* line 345, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.circle, .simform__actions .circle.sumbit {
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  line-height: 1;
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* line 354, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.circle.lg, .simform__actions .circle.lg.sumbit {
+  width: 78px;
+  height: 78px;
+  min-width: 78px;
+}
+
+/* line 359, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.circle.sm, .simform__actions .circle.sm.sumbit {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+/* line 364, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.circle.xs, .simform__actions .circle.xs.sumbit {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+}
+
+/* line 369, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn:focus, .simform__actions .sumbit:focus, .btn:active, .simform__actions .sumbit:active, .btn.active, .simform__actions .active.sumbit, .btn:active:focus, .simform__actions .sumbit:active:focus, .btn.active:focus, .simform__actions .active.sumbit:focus {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+/* line 374, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.red, .simform__actions .red.sumbit {
+  background: #f44336;
+  color: #FFF;
+}
+
+/* line 378, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.red:active, .simform__actions .red.sumbit:active, .btn.red:focus, .simform__actions .red.sumbit:focus {
+  background-color: #ef1d0d;
+}
+
+/* line 381, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.red:hover, .simform__actions .red.sumbit:hover {
+  background-color: #f32c1e;
+}
+
+/* line 384, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.pink, .simform__actions .pink.sumbit {
+  background: #E91E63;
+  color: #FFF;
+}
+
+/* line 388, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.pink:active, .simform__actions .pink.sumbit:active, .btn.pink:focus, .simform__actions .pink.sumbit:focus {
+  background-color: #c61350;
+}
+
+/* line 391, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.pink:hover, .simform__actions .pink.sumbit:hover {
+  background-color: #d81558;
+}
+
+/* line 394, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.purple, .simform__actions .purple.sumbit {
+  background: #9C27B0;
+  color: #FFF;
+}
+
+/* line 398, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.purple:active, .simform__actions .purple.sumbit:active, .btn.purple:focus, .simform__actions .purple.sumbit:focus {
+  background-color: #7b1f8a;
+}
+
+/* line 401, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.purple:hover, .simform__actions .purple.sumbit:hover {
+  background-color: #89229b;
+}
+
+/* line 404, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-purple, .simform__actions .deep-purple.sumbit {
+  background: #673AB7;
+  color: #FFF;
+}
+
+/* line 408, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-purple:active, .simform__actions .deep-purple.sumbit:active, .btn.deep-purple:focus, .simform__actions .deep-purple.sumbit:focus {
+  background-color: #532f94;
+}
+
+/* line 411, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-purple:hover, .simform__actions .deep-purple.sumbit:hover {
+  background-color: #5c34a4;
+}
+
+/* line 414, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.indigo, .simform__actions .indigo.sumbit {
+  background: #3F51B5;
+  color: #FFF;
+}
+
+/* line 418, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.indigo:active, .simform__actions .indigo.sumbit:active, .btn.indigo:focus, .simform__actions .indigo.sumbit:focus {
+  background-color: #334293;
+}
+
+/* line 421, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.indigo:hover, .simform__actions .indigo.sumbit:hover {
+  background-color: #3849a2;
+}
+
+/* line 424, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue, .simform__actions .blue.sumbit {
+  background: #2196F3;
+  color: #FFF;
+}
+
+/* line 428, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue:active, .simform__actions .blue.sumbit:active, .btn.blue:focus, .simform__actions .blue.sumbit:focus {
+  background-color: #0c7fda;
+}
+
+/* line 431, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue:hover, .simform__actions .blue.sumbit:hover {
+  background-color: #0d8aee;
+}
+
+/* line 434, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-blue, .simform__actions .light-blue.sumbit {
+  background: #03A9F4;
+  color: #FFF;
+}
+
+/* line 438, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-blue:active, .simform__actions .light-blue.sumbit:active, .btn.light-blue:focus, .simform__actions .light-blue.sumbit:focus {
+  background-color: #028ac7;
+}
+
+/* line 441, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-blue:hover, .simform__actions .light-blue.sumbit:hover {
+  background-color: #0398db;
+}
+
+/* line 444, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.cyan, .simform__actions .cyan.sumbit {
+  background: #00BCD4;
+  color: #FFF;
+}
+
+/* line 448, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.cyan:active, .simform__actions .cyan.sumbit:active, .btn.cyan:focus, .simform__actions .cyan.sumbit:focus {
+  background-color: #0093a6;
+}
+
+/* line 451, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.cyan:hover, .simform__actions .cyan.sumbit:hover {
+  background-color: #00a5bb;
+}
+
+/* line 454, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.teal, .simform__actions .teal.sumbit {
+  background: #009688;
+  color: #FFF;
+}
+
+/* line 458, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.teal:active, .simform__actions .teal.sumbit:active, .btn.teal:focus, .simform__actions .teal.sumbit:focus {
+  background-color: #00685e;
+}
+
+/* line 461, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.teal:hover, .simform__actions .teal.sumbit:hover {
+  background-color: #007d71;
+}
+
+/* line 464, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.green, .simform__actions .green.sumbit {
+  background: #4CAF50;
+  color: #FFF;
+}
+
+/* line 468, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.green:active, .simform__actions .green.sumbit:active, .btn.green:focus, .simform__actions .green.sumbit:focus {
+  background-color: #3e8f41;
+}
+
+/* line 471, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.green:hover, .simform__actions .green.sumbit:hover {
+  background-color: #449d48;
+}
+
+/* line 474, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-green, .simform__actions .light-green.sumbit {
+  background: #8BC34A;
+  color: #FFF;
+}
+
+/* line 478, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-green:active, .simform__actions .light-green.sumbit:active, .btn.light-green:focus, .simform__actions .light-green.sumbit:focus {
+  background-color: #74a838;
+}
+
+/* line 481, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.light-green:hover, .simform__actions .light-green.sumbit:hover {
+  background-color: #7eb73d;
+}
+
+/* line 484, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.lime, .simform__actions .lime.sumbit {
+  background: #CDDC39;
+  color: #FFF;
+}
+
+/* line 488, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.lime:active, .simform__actions .lime.sumbit:active, .btn.lime:focus, .simform__actions .lime.sumbit:focus {
+  background-color: #b6c423;
+}
+
+/* line 491, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.lime:hover, .simform__actions .lime.sumbit:hover {
+  background-color: #c6d626;
+}
+
+/* line 494, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.yellow, .simform__actions .yellow.sumbit {
+  background: #FFEB3B;
+  color: #FFF;
+}
+
+/* line 498, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.yellow:active, .simform__actions .yellow.sumbit:active, .btn.yellow:focus, .simform__actions .yellow.sumbit:focus {
+  background-color: #ffe60d;
+}
+
+/* line 501, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.yellow:hover, .simform__actions .yellow.sumbit:hover {
+  background-color: #ffe822;
+}
+
+/* line 504, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.amber, .simform__actions .amber.sumbit {
+  background: #FFC107;
+  color: #FFF;
+}
+
+/* line 508, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.amber:active, .simform__actions .amber.sumbit:active, .btn.amber:focus, .simform__actions .amber.sumbit:focus {
+  background-color: #d8a200;
+}
+
+/* line 511, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.amber:hover, .simform__actions .amber.sumbit:hover {
+  background-color: #edb100;
+}
+
+/* line 514, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.orange, .simform__actions .orange.sumbit {
+  background: #FF9800;
+  color: #FFF;
+}
+
+/* line 518, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.orange:active, .simform__actions .orange.sumbit:active, .btn.orange:focus, .simform__actions .orange.sumbit:focus {
+  background-color: #d17d00;
+}
+
+/* line 521, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.orange:hover, .simform__actions .orange.sumbit:hover {
+  background-color: #e68900;
+}
+
+/* line 524, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-orange, .simform__actions .deep-orange.sumbit {
+  background: #FF5722;
+  color: #FFF;
+}
+
+/* line 528, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-orange:active, .simform__actions .deep-orange.sumbit:active, .btn.deep-orange:focus, .simform__actions .deep-orange.sumbit:focus {
+  background-color: #f33a00;
+}
+
+/* line 531, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.deep-orange:hover, .simform__actions .deep-orange.sumbit:hover {
+  background-color: #ff4409;
+}
+
+/* line 534, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.brown, .simform__actions .brown.sumbit {
+  background: #795548;
+  color: #FFF;
+}
+
+/* line 538, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.brown:active, .simform__actions .brown.sumbit:active, .btn.brown:focus, .simform__actions .brown.sumbit:focus {
+  background-color: #5c4137;
+}
+
+/* line 541, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.brown:hover, .simform__actions .brown.sumbit:hover {
+  background-color: #694a3e;
+}
+
+/* line 544, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.grey, .simform__actions .grey.sumbit {
+  background: #9E9E9E;
+  color: #FFF;
+}
+
+/* line 548, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.grey:active, .simform__actions .grey.sumbit:active, .btn.grey:focus, .simform__actions .grey.sumbit:focus {
+  background-color: #878787;
+}
+
+/* line 551, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.grey:hover, .simform__actions .grey.sumbit:hover {
+  background-color: #919191;
+}
+
+/* line 554, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue-grey, .simform__actions .blue-grey.sumbit {
+  background: #607D8B;
+  color: #FFF;
+}
+
+/* line 558, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue-grey:active, .simform__actions .blue-grey.sumbit:active, .btn.blue-grey:focus, .simform__actions .blue-grey.sumbit:focus {
+  background-color: #4d6570;
+}
+
+/* line 561, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.btn.blue-grey:hover, .simform__actions .blue-grey.sumbit:hover {
+  background-color: #566f7c;
+}
+
+/* line 565, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.special {
+  color: #f44336;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
+
+/* line 571, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.special:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  left: 0;
+  background: #f00;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* line 583, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.special:hover {
+  transition: all 0.15s ease-out;
+}
+
+/* line 586, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+.special:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* line 591, /Users/edwinsandoval/Documents/Rails projects/celuprecios/app/assets/stylesheets/users.scss */
+#baseline {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-image: url(http://basehold.it/i/24);
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

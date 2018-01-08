@@ -1,0 +1,23 @@
+<div style="width: 80%; margin: 0 auto;">
+ 	
+	<h3 class=" letra-times-new-roman text-center" style="font-size: 1.5em;">  Editar Telefono </h3>
+	<%= form_for(@phone) do |f| %>
+		<% @phone.errors.full_messages.each do |message| %>
+			<div class="be-red  white top-space">
+				<%= message %>
+			</div>
+		<%end%>
+		<div class="field", >
+			<%= f.label :name, "Nombre:" %><br />
+			<%= f.text_field :name, placeholder: "Nombre", class: "from-control"%>
+		</div>
+		<div class="field">
+			<%= f.label :brand_id, "Cambiar marca " %><br />
+			<%= f.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: true, class: "from-control" %>
+		</div>
+		<div class="field">
+			<%= link_to "Eliminar", @phone,class: "btn white be-blue", :method => :delete %>
+			<%= f.submit "Guardar", class: "btn white be-blue", method: :put %>
+		</div>
+	<%end%>
+</div>

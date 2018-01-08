@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		
+   		<title>Celuprecios</title>
+	    <%= csrf_meta_tags %>
+
+	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	   
+	    <%= favicon_link_tag 'logo_navegador.ico' %>
+
+  	</head>
+
+	  
+	<body >
+
+  <%= render "parcials/navigation_menu" %>
+    <%= render "parcials/barrainfo" %>
+		
+		<div class="row "  style="margin-top: 2em; ">
+			<div class="row col-xs-2 " style="margin-top: 3em;">
+				<div class="col-xs-12 div-border-right">
+					<div class="center-xs ">
+						<h2 class="no-margin top-space ">
+							<%= image_tag "categorias.jpg" %>
+						</h2>
+					</div>
+					<div class="row around-xs total-padding "  >
+						<%= render "brands/brand" %>
+            <script type="text/javascript">
+                var ad_idzone = "2503911",
+                    ad_width = "468",
+                    ad_height = "60";
+            </script>
+            <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
+            <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
+
+          </div>
+				</div>
+				
+			</div>
+			<div class="col-xs">
+				<div style="width: 90%; margin: 0 auto;">
+					<div style="<%= "display: none; " if notice.nil? and alert.nil? %>" >
+						<div class="row center-xs letra-times-new-roman">
+							<p class="notice col-xs-8 no-margin"><%= notice %></p>
+					    	<p class="alert col-xs-8 no-margin"><%= alert %></p>
+						</div>
+					</div>
+ 					<div class="row center-xs">
+						<div id="results" class="col-xs-8" ></div>
+					</div>
+					<div id="principal" style="margin-bottom: 3em;">
+						<%= render "parcials/login"%>
+						<%= yield %>
+            <% render "parcials/barra_inferior"%>
+					</div>
+				</div>
+			</div>
+			<div class="row col-xs-2 center-xs" style="margin-top: 3em; ">
+				<div class="col-xs-8 div-border-left">
+					<%= image_tag "Boton_de_Blogs.jpg", class: "bottom-space", style: "margin-left: 20px;", style: ""%>
+					<%= render "parcials/advertisement" %>
+          <script type="text/javascript">
+              var ad_idzone = "2503911",
+                  ad_width = "468",
+                  ad_height = "60";
+          </script>
+          <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
+          <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
+
+        </div>
+			</div>
+		</div>
+    </body>
+
+	
+</html>

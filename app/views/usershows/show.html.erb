@@ -1,0 +1,303 @@
+
+<div class="row center-xs" style="background-color: #B9C4D9; ">
+  	<div class="row col-md-11 top-space letra-lucida-grande">
+  		<div class="row col-md-12">
+  			<h1 class="col-xs-7 no-margin text-left letra-times-new-roman " style="font-size: 2.5em; padding-top: 15px; color: #051940 !important;"><%= @user.name %></h1>
+  			 <div class="col-xs-3 row">
+		        <% if !@likes_porcentaje_general.nil? %>
+			        <div class="col-xs-6 no-padding">
+			       		<h2 class="no-margin">  
+				        	<%= image_tag "like_normal.png" %>
+		        			<%= @likes_porcentaje_general %> %
+		        		</h2>
+			        </div>
+		        	<div class="col-xs-6 no-padding">
+			        	<h2 class="no-margin"> 
+				        	<%= image_tag "dislike_normal.png"%>
+				        	<%= 100 - @likes_porcentaje_general %> % 
+			        	</h2>
+		        	</div>
+		        <%end%>
+  			</div>
+  			<h3 class="col-xs-2 no-margin text-right top-space grey">
+  			Articulos vendidos: <%= @articulos_vendidos %>
+	        </h3>
+
+  			<hr class="col-xs-12 no-margin" style="background-color: white;  border: 2px solid #C0CADA;">
+  		</div>
+  		<div class="row col-xs-4 top-space">
+  			<div class="col-xs-11 top-space">
+  				<div class="field top-space">
+  					<% if @user.photo_file_name.nil? %>
+						<%= image_tag "new_perfil_normal.png", class: "circular-max"  %>
+					<%else%>act
+						<%= image_tag @user.photo.url(:normal), class: "circular-max"  %>
+					<%end%>
+		            
+		        </div>
+  			</div>
+
+
+
+        <div class="row col-xs-12 no-padding">
+  				
+          <% if user_signed_in? && current_user.id == @user.id %>
+            <div class="col-xs-4 no-padding">
+              <%= link_to (image_tag "iconUser.png"), edit_user_registration_path %>
+            </div>
+            <div class="col-xs-8 field text-left no-padding">
+              Activo desde: <%= @user.created_at.year %>
+            </div>
+          <%else%>
+            <div class="col-xs-12 field text-center no-padding">
+              Activo desde: <%= @user.created_at.year %>
+            </div>
+          <%end%>
+
+        </div>
+  			
+  		</div>
+
+
+
+  		<div class="row col-xs-8 " style=" background-color: white; border: 7px solid #C0CADA;	border-top:  7px solid blue;	height:250px;	margin-top: 3em;">
+  			<div class="col-xs-12 text-left">
+  				<h1 class="letra-times-new-roman" style="font-size: 2.5em; color: #C0CADA;">Datos Personales</h1>
+  				<% @id_comentador = @user.id %>
+  				<div style="font-size: 1.2em;">
+  					<div class="field">
+				        Correo: <%= @user.email %>
+				        <hr class="punteada">
+			        </div>
+			        <div class="field">
+				        Ciudad: <%= @user.city %>
+				        <hr class="punteada">
+			        </div>
+
+			        <div class="field">
+				        Celular: <%= @user.celular %>
+				        <hr class="punteada">
+			        </div>
+
+			        <div class="field">
+				        Link de facebook: <%= (link_to @user.facebook.truncate(45)) unless @user.facebook.nil? %>
+				        <hr class="punteada">
+			        </div>
+  				</div>
+		        
+		        <div class="field be-blue white text-center border-5"	style="display: none;">
+		        	<h2 class="no-margin">
+		        		<%= link_to "Articulos de #{@user.name}", articulos_usershow_path(@user.name) %> 
+		        	</h2> 
+		        </div>
+		        
+  			</div>
+  			<hr class="col-xs-12" style="background-color: white; border: 2px solid black; margin-top: 3.4em;">
+  		</div>
+  	</div>
+
+  	<h1 class="col-xs-12" style=" <%='margin-top: 2em;' unless user_signed_in? && current_user.id == @user.id %>">Anuncios</h1>
+
+  	<div class="row col-xs-12">
+		<% @user.articles.limit(6).each do |article| %>
+			<div class="col-xs-2 vertical">
+				<%= link_to article_path(article.id),data: { turbolinks: false} do %>
+				 	<div class="text-left  letra-lucida-grande">
+			 			<div class="letra-times-new-roman" style="font-size: 15px;">
+							<%= article.brand.name %>
+							<%= article.phone.name %>
+						</div>
+					 	<div >
+							<%= image_tag article.foto1.url(:peque), style: "width: 130px; height: 90px;", class: "circular" %>
+						</div>
+						<div class="letra-times-new-roman text-center" style="font-size: 15px;">
+							<% if !article.may_sivendido? %>
+								<div class="red">
+									Vendido
+								</div>
+							<%else%>
+								<div class="green">
+									Disponible
+								</div>
+							<%end%>
+						</div>
+					</div>
+				<%end%>
+			</div>	
+		<%end%>
+  	</div>
+
+
+
+
+
+  	<div class="col-xs-12 top-space">
+  		<div class="row col-xs-12 top-space ">
+  			<%= image_tag "barra.png", style: "width: 100%;"%>
+  		</div>
+  		
+	    <div class="row col-md-12 center-xs">	
+	    	<div class="row col-xs-6 " style="background-color: white; margin-right: 8px; border: 4px solid #C0CADA; border-top: 4px solid blue;"  >
+	        	<div class="col-xs-12">
+	        		<h2 class="letra-times-new-roman" style="bafont-size: 2.1em; color: #C0CADA;">Reputacion como vendedor</h2>
+	        	</div>
+	        	<div class="row col-xs-12">
+	        		<% if !@likes_porcentaje_vendedor.nil? %>
+		        	 	<div class="row col-xs-12 no-padding center-xs">
+					        <div class="row col-xs-6" style="margin-left: 1em; border: 2px solid grey; padding: 5px 10px; ">
+					        	<div class="col-xs-6 no-padding">
+						       		<p class="no-margin letra-times-new-roman">   
+							        	<%= image_tag "like_normal.png" %>
+					        			<%= @likes_porcentaje_vendedor %> %
+					        		</p>
+						        </div>
+					        	<div class="col-xs-6 no-padding">
+						        	<p class="no-margin letra-times-new-roman"> 
+							        	<%= image_tag "dislike_normal.png"%>
+							        	<%= 100 - @likes_porcentaje_vendedor %> % 
+						        	</p>
+					        	</div>
+					        </div>
+			  			</div>
+		        	 	<div class="col-xs-12" >
+		        	 		<p class="  letra-times-new-roman negrilla text-left" style="font-size: 1.8em; margin: 20px 0px;">Comentarios</p>
+		        	 		<div class="row scrollbar" style="height: 100px ">
+		        	 			
+			        	 		<% @commentsvendedor.each do |commentvendedor|%>
+			        	 			<div class="col-xs-1">
+				        	 			<% if commentvendedor.like == "like"%>
+											<%= image_tag "like.png" %>
+										<%else%>
+											<%= image_tag "dislike.png" %>
+										<%end%>
+				        	 		</div>
+				        	 		<div class="text-justify col-xs-11">
+
+				        	 			<%= commentvendedor.user.name %>: 
+				        	 			<%= commentvendedor.body%><br />
+				        	 		</div>
+			        			<%end%>
+		        	 		</div>
+		        	 		
+		        	 	</div>
+	        		<%else%>
+		        	 	<h1 class="letra-times-new-roman text-center col-xs-12">No hay comentarios</h1>
+		        	<%end%>
+		        </div>
+	    	</div>
+	    	<div class="row col-xs-6" style="background-color: white; margin-left: 8px; border: 4px solid #C0CADA; border-top: 4px solid blue;" >
+	    		<div class="col-xs-12">
+	        		<h2 class="letra-times-new-roman" style="font-size: 2em; color: #C0CADA;">Reputacion como Comprador</h2>
+	        	</div>
+	    		<% if !@likes_porcentaje_comprador.nil? %>
+	        		<div class="row col-xs-12 no-padding center-xs">
+				        <div class="row col-xs-6" style="margin-left: 1em; border: 2px solid grey; padding: 5px 10px; ">
+				        	<div class="col-xs-6 no-padding">
+					       		<p class="no-margin letra-times-new-roman">  
+						        	<%= image_tag "like_normal.png" %>
+				        			<%= @likes_porcentaje_comprador %> %
+				        		</p>
+					        </div>
+				        	<div class="col-xs-6 no-padding">
+					        	<p class="no-margin letra-times-new-roman"> 
+						        	<%= image_tag "dislike_normal.png"%>
+						        	<%= 100 - @likes_porcentaje_comprador %> % 
+					        	</p>
+				        	</div>
+				        </div>
+		  			</div>
+	        	 	<div class="col-xs-12" >
+	        	 		<p class="  letra-times-new-roman negrilla text-left" style="font-size: 1.8em; margin: 20px 0px;">Comentarios</p>
+	        	 		<div class="row scrollbar" style="height: 100px ">
+		        	 		<% @commentscomprador.each do |commentcomprador|%>
+		        	 			<div class="col-xs-1">
+			        	 			<% if commentcomprador.like == "like"%>
+										<%= image_tag "like.png" %>
+									<%else%>
+										<%= image_tag "dislike.png" %>
+									<%end%>
+			        	 		</div>
+			        	 		<div class="text-justify col-xs-11">
+			        	 			<%= commentcomprador.user.name %>: 
+			        	 			<%= commentcomprador.body%><br />
+			        	 		</div>
+			        			
+		        			<%end%>
+	        	 		</div>
+	        	 		
+	        	 	</div>
+	    	 	<%else%>
+	        	 	<h1 class="letra-times-new-roman text-center col-xs-12">No hay comentarios</h1>
+	        	<%end%>
+	    	</div>
+	    </div> 	
+        <div class="row col-md-12 center-xs">
+        	<div class="col-xs-12">
+        		<h1>Valorar a este usuario</h1>
+        	</div>
+        	<div class="col-xs-12">
+        		<%= form_for(@comment) do |f| %>
+	        		<div class="row">
+	        			<div class="col-xs-12">
+	        				<% @comment.errors.full_messages.each do |message| %>
+							<div class="be-red  white top-space">
+								<%= message %>
+							</div>
+							<%end%>
+							<div class="field text-left", >
+								<% if user_signed_in?%>
+									<%= f.label :body, current_user.name  %>:<br />
+								<%else%>
+									<%= f.label :body, "Necesitar inicar sesion para comentar" %><br />	
+								<%end%>
+								<%= f.text_area :body, size: "12x2", placeholder: "Comentario", class: "from-control"%>
+							</div>
+							<div class="field" style=" display: none", >
+								<%= f.label :comentador, "Comentador:" %><br />
+								<%= f.text_field :comentador, class: "from-control", value: @user.id %>
+							</div>
+	        			</div>
+						<div class="row col-xs-12">
+							<div class="row col-xs-5">
+								<h3 class="col-xs-4">Comentar como</h3>
+								<div class="col-xs-6 text-left">
+									<div class="field">
+										<%= radio_button_tag("comment[tipo]", "comprador", checked:"checked" ) %>
+										<%= label_tag(:tipo, "Comprador") %>
+									</div>
+									<div class="">
+										<%= radio_button_tag("comment[tipo]", "vendedor" ) %>
+										<%= label_tag(:tipo, "Vendedor") %>
+									</div>
+								</div>
+							</div>
+							<div class="row col-xs-5">
+								<h3 class="col-xs-4">Que tal te parecio</h3>
+								<div class="col-xs-6 text-left">
+									<div class="field ">
+										<%= radio_button_tag("comment[like]", "like", checked:"checked" ) %>
+									<%= label_tag(:like, "Me gusta") %>
+									</div>
+									<div class="">
+										<%= radio_button_tag("comment[like]", "dislike" ) %>
+										<%= label_tag(:like, "No me gusta") %>
+									</div>
+								</div>
+							</div>
+							<div class="field col-xs-2">
+								<% if user_signed_in? %>
+									<%= f.submit "Comentar", class: "btn white be-blue" %>
+								<%else%>
+									<a id="myBtnlogin2" style="" >
+										<%= image_tag "Boton_de_iniciar_session.png", class: "vertical"  %>
+									</a>
+								<%end%>
+								
+							</div>
+						</div>
+	        		</div>
+				<%end%>
+			</div>
+        </div>
+    </div>
+</div>

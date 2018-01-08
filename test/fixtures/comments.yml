@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  like: MyString
+  body: MyString
+  type: 
+
+two:
+  references: 
+  like: MyString
+  body: MyString
+  type: 

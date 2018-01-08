@@ -1,0 +1,21 @@
+I"c(function() {
+  jQuery(function() {
+    var states;
+    $('#person_state_id').parent.hide();
+    states = '#person_state_id'.html();
+    return $('#person_state_id').change(function() {
+      var country, options;
+      country = $('#person_country_id :selected').text();
+      options = $(states).filter("optgroup[label='" + country + "']").html();
+      if (options) {
+        $('#person_state_id').html(options);
+        return $('#person_state_id').parent.show();
+      } else {
+        $('#person_state_id').empy();
+        return $('#person_state_id').parent.hide();
+      }
+    });
+  });
+
+}).call(this);
+:ET

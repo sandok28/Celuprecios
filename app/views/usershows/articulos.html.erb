@@ -1,0 +1,16 @@
+
+<div style="width: 90%; margin: 0 auto;">
+ 	<div class="row center-xs">
+ 		<div class="col-xs-10 field be-blue text-center border-5">
+        	<h1 class="no-margin">
+        		<%= "Articulos de #{@name}" %> 
+        	</h1> 
+        </div>
+ 		<div class="col-xs-8 be-small">
+ 			 
+	 		<%= render @user_articles %>
+	 		<h3><%= will_paginate @user_articles  %></h3> 
+		</div> 
+		
+ 	</div>
+</div>

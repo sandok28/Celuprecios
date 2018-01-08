@@ -1,0 +1,181 @@
+<% if @article.may_sivendido? %>
+	<div style="width: 80%; margin: 0 auto;">
+		<%= form_for(@article) do |f| %>
+			<% @article.errors.full_messages.each do |message| %>
+				<div class="be-red  white top-space">
+					<%= message %>
+				</div>
+			<%end%>
+			<% if user_signed_in? && current_user.is_admin_user? %>
+		    	<div class="field">
+					<%= select_tag(:"article[priority]", options_for_select([['Ninguna prioridad', "normal"],['Primera pagina', 'activo1'], ['Segunda pagina', 'activo2'],['Tercera pagina', 'activo3']], 'normal'))%>
+				</div>
+			<%end%>
+			
+
+			<div class="field">
+				<%= check_box_tag("article[vendido]", "si" ) %>
+				<%= label_tag(:vendido, "Marcar el articulo como vendido IMPORTANTE: UNA VEZ VENDIDO NO PODRA EDITAR EL ARTICULO", class: "red") %>
+
+			</div>
+			<div class="field">
+				<%= f.label :brand_id, "Marca:" %><br />
+				<%= f.collection_select :brand_id, Brand.order(:name), :id, :name, class: "from-control" %>
+			</div>
+			<div class="field">
+				<%= f.label :phone_id, "Modelo:" %><br />
+				<%= f.grouped_collection_select :phone_id, Brand.order(:name), :phones, :name, :id, :name, include_blank: true, class: "from-control" %>
+			</div>
+
+			<div class="field", >
+				<%= f.label :precio, "Precio:" %><br />
+				<%= f.text_field :precio, class: "from-control"%>
+			</div>
+			<div class="field", >
+				<%= f.label :precio_minimo, "Precio minimo:" %><br />
+				<%= f.text_field :precio_minimo, class: "from-control"%>
+			</div>
+			<div class="field", >
+				<%= f.label :ciudad, "Ciudad:" %><br />
+				<%= f.text_field :ciudad, class: "from-control"%>
+			</div>
+			<div class="field", >
+				<%= f.label :celular, "Numero telefonico de contacto" %><br />
+				<%= f.text_field :celular, class: "from-control"%>
+			</div>
+			<div class="field", >
+				<%= f.label :estado_fisico, "Estado fisico:" %><br />
+				<%= select_tag :estado_fisico, options_for_select((1..10).to_a,@article.estado_fisico), name: "article[estado_fisico]" %>
+				<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
+			</div>
+			<div class="field", >
+				<%= f.label :estado_funcional, "Estado funcional:" %><br />
+				<%= select_tag :estado_funcional, options_for_select((1..10).to_a, @article.estado_funcional), name: "article[estado_funcional]" %>
+				<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 List-without-points">
+					<h1>Se entrega con:</h1>
+					
+					<ul class="no-padding">
+						<li>
+							<%= check_box_tag("article[caja]", "si", true )  unless @article.may_sicaja? %>
+							<%= check_box_tag("article[caja]", "si")  unless @article.may_nocaja? %>
+							<%= label_tag(:caja, "Caja") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[garantia]", "si", true )  unless @article.may_sigarantia? %>
+							<%= check_box_tag("article[garantia]", "si")  unless @article.may_nogarantia? %>
+							<%= label_tag(:garantia, "Garantia") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[factura]", "si", true )  unless @article.may_sifactura? %>
+							<%= check_box_tag("article[factura]", "si")  unless @article.may_nofactura? %>
+							<%= label_tag(:factura, "Factura") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[audifonos]", "si", true )  unless @article.may_siaudifonos? %>
+							<%= check_box_tag("article[audifonos]", "si")  unless @article.may_noaudifonos? %>
+							<%= label_tag(:audifonos, "Audifonos") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[cargador]", "si", true )  unless @article.may_sicargador? %>
+							<%= check_box_tag("article[cargador]", "si")  unless @article.may_nocargador? %>
+							<%= label_tag(:cargador, "Cargador") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[vidriotemplado]", "si", true )  unless @article.may_sividriotemplado? %>
+							<%= check_box_tag("article[vidriotemplado]", "si")  unless @article.may_novidriotemplado? %>
+							<%= label_tag(:vidriotemplado, "Vidrio templado") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[funda]", "si", true )  unless @article.may_sifunda? %>
+							<%= check_box_tag("article[funda]", "si")  unless @article.may_nofunda? %>
+							<%= label_tag(:funda, "Funda") %>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-6 List-without-points">
+					<h1>Formas de pago</h1>
+					<ul class="no-padding">
+						<li>
+							<%= check_box_tag("article[cambio]", "si", true )  unless @article.may_sicambio? %>
+							<%= check_box_tag("article[cambio]", "si" )  unless @article.may_nocambio? %>
+							<%= label_tag(:cambio, "Cambio por otra cosa") %>
+						</li>
+						<li>
+							<%= check_box_tag("article[efectivo]", "si", true )  unless @article.may_siefectivo? %>
+							<%= check_box_tag("article[efectivo]", "si")  unless @article.may_noefectivo? %>
+							<%= label_tag(:efectivo, "Efectivo") %>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="field", >
+				<%= f.label :comentario, "Comentarios que desee agregar:" %><br />
+				<%= f.text_area :comentario, size: "12x4", class: "from-control"%>
+			</div>
+			<div class="field", >
+				<%= f.label :caracteristicas, "Caracteristicas del celular:" %><br />
+				<%= f.text_area :caracteristicas, size: "12x4", class: "from-control"%>
+			</div>
+
+			<div class="field List-without-points">
+				<h2>Fotos del celular</h2>
+				<ul class="no-padding">
+					<li>
+					
+						<% if @article.foto1_file_name.nil? %>
+							<p>Agregar foto 1 </p> 
+						<% else %>
+							<p>foto 1</p> 
+							<%= image_tag @article.foto1.url(:normal) %>
+							Remplazar por :  
+						<%end%>
+						<%= f.file_field :foto1%>
+					</li>
+					<li>
+						<% if @article.foto2_file_name.nil? %>
+							<p>Agregar foto 2</p> 
+						<% else %>
+							<p>foto 2</p> 
+							<%= image_tag @article.foto2.url(:normal) %>
+							Remplazar por : 
+						<%end%>
+						<%= f.file_field :foto2%>
+					</li>
+					<li>
+						<% if @article.foto3_file_name.nil? %>
+							<p>Agregar foto 3</p> 
+						<% else %> 
+							<p>foto 3</p> 
+							<%= image_tag @article.foto3.url(:normal) %>
+							Remplazar por :  
+						<%end%>
+						
+						<%= f.file_field :foto3%>
+					</li>
+					<li>
+						<% if @article.foto4_file_name.nil? %>
+							<p>Agregar foto 4</p> 
+						<% else %>
+							<p>foto 4</p> 
+							<%= image_tag @article.foto4.url(:normal) %>
+							Remplazar por : 
+						<%end%>
+						<%= f.file_field :foto4%>
+					</li>
+				</ul>
+			</div>
+			<div class="field">
+				<%= link_to "Eliminar", @article,class: "btn white be-blue", :method => :delete %>
+				<%= f.submit "Guardar", class: "btn white be-blue", method: :put %>
+			</div>
+		<%end%>
+	</div>
+<%else%>
+	Articulo ya vendido
+<%end%>
+
+
