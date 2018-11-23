@@ -30,7 +30,7 @@
   				<div class="field top-space">
   					<% if @user.photo_file_name.nil? %>
 						<%= image_tag "new_perfil_normal.png", class: "circular-max"  %>
-					<%else%>act
+					<%else%>
 						<%= image_tag @user.photo.url(:normal), class: "circular-max"  %>
 					<%end%>
 		            
