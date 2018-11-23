@@ -2,65 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe62c34-ceb1-4cdc-b8c3-ece5e2113a4a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       <change beforePath="$PROJECT_DIR$/app/views/usershows/show.html.erb" afterPath="$PROJECT_DIR$/app/views/usershows/show.html.erb" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/-R/-R7_RkcD6N6MGTSfYHPRVEcbi7JkjO4WVYiB7XXN9eI.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/-R/-R7_RkcD6N6MGTSfYHPRVEcbi7JkjO4WVYiB7XXN9eI.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/0m/0mO-LXPi3gtn0Y3p8aA-wWF9P5hXB3MNjdnDgl1EFa8.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/0m/0mO-LXPi3gtn0Y3p8aA-wWF9P5hXB3MNjdnDgl1EFa8.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/1W/1wyp0tEvnDAv67JlPzbgCZss2euSOdQ9KcEKyBnhm2U.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/1W/1wyp0tEvnDAv67JlPzbgCZss2euSOdQ9KcEKyBnhm2U.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/1j/1JnlO9QtObaZfvUtlsVcS6LeYNjbD_FfuHIJdzXxxBQ.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/1j/1JnlO9QtObaZfvUtlsVcS6LeYNjbD_FfuHIJdzXxxBQ.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/4B/4BvHSfJcEe8wS7yAy2o-7KYFLxjnlAAYLk77d6Aizo8.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/4B/4BvHSfJcEe8wS7yAy2o-7KYFLxjnlAAYLk77d6Aizo8.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/5w/5wZliQHkx90UaQ9h3QkOQq8l6HIAOFmhA7xeKaUROZk.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/5w/5wZliQHkx90UaQ9h3QkOQq8l6HIAOFmhA7xeKaUROZk.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/6u/6UDQDSWFgv1Y5XtOMkpmUf2WX2KRga6krMyH9Ocmljs.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/6u/6UDQDSWFgv1Y5XtOMkpmUf2WX2KRga6krMyH9Ocmljs.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/9l/9LgJuE7cpjhDD6Hk1kNYdvI-4qS2C-8JD82bJ6iVc9w.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/9l/9LgJuE7cpjhDD6Hk1kNYdvI-4qS2C-8JD82bJ6iVc9w.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/9y/9YkMQkYx_gQeA-0VJovSsJIRc5BuGcK2EaB9TVOZVDA.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/9y/9YkMQkYx_gQeA-0VJovSsJIRc5BuGcK2EaB9TVOZVDA.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Bt/BTkHg9dBgymZCUTmAueX45a8FxBeOB3_R8uS7iWWRcU.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Bt/BTkHg9dBgymZCUTmAueX45a8FxBeOB3_R8uS7iWWRcU.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Dc/dciVjokxcGu-eIJeI8S-DkSbBzxm88x2IRzOpWJUNCg.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Dc/dciVjokxcGu-eIJeI8S-DkSbBzxm88x2IRzOpWJUNCg.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Dr/DRM2qnFhty4Um9G4aYqgh_bF4cnPZ_Az1sgXbJqIdQc.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Dr/DRM2qnFhty4Um9G4aYqgh_bF4cnPZ_Az1sgXbJqIdQc.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Et/Etkjgtr9qi_jz4BMYO6oXfrJFv602O7SLrBTO0NE5AU.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Et/Etkjgtr9qi_jz4BMYO6oXfrJFv602O7SLrBTO0NE5AU.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/G0/G0kukI-r0q0Vbrg6e_jnYJoYcOX8K__h-mwKbCf4twE.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/G0/G0kukI-r0q0Vbrg6e_jnYJoYcOX8K__h-mwKbCf4twE.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/HJ/hjwg3D6dimlDOy8rpi4PvsxDQr9z3Yyx0J2jAbYLBCs.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/HJ/hjwg3D6dimlDOy8rpi4PvsxDQr9z3Yyx0J2jAbYLBCs.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/K6/K6sczLNFX_p10Lqb59cIMlg0oTh4iCeorY4wPTiaZCY.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/K6/K6sczLNFX_p10Lqb59cIMlg0oTh4iCeorY4wPTiaZCY.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Kb/KbkOopl5Y1kupDEtjvZnJBWVc0lBV4qeqp2k7Z_CUNE.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Kb/KbkOopl5Y1kupDEtjvZnJBWVc0lBV4qeqp2k7Z_CUNE.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/MG/mgZcevsjwVUQdm0xSAq0jiLi3BhyHK-B2kG2c1KRIZE.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/MG/mgZcevsjwVUQdm0xSAq0jiLi3BhyHK-B2kG2c1KRIZE.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/N1/n1qQ-bLUm0YWobx76z-uWqT_28n1glmK6_5BrKPuVY8.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/N1/n1qQ-bLUm0YWobx76z-uWqT_28n1glmK6_5BrKPuVY8.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/N_/n_xYqQYhwEMQknb3jFQnjlxxBE9TzMNHCdJ-bEyZFIw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/N_/n_xYqQYhwEMQknb3jFQnjlxxBE9TzMNHCdJ-bEyZFIw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Oh/OhHbFdFD4LHsq_hiiho9vpFQ7W6HHhNxHHTLAzrruZg.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Oh/OhHbFdFD4LHsq_hiiho9vpFQ7W6HHhNxHHTLAzrruZg.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Q7/q7vcYZSme2Ue76vnm7VtzPB0CjEOLQFsE6dQXY66tSI.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Q7/q7vcYZSme2Ue76vnm7VtzPB0CjEOLQFsE6dQXY66tSI.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/QI/QI-apGLKYvtdUsSzeQBlY76IF_bZ7OsrJbaXBs7o9g8.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/QI/QI-apGLKYvtdUsSzeQBlY76IF_bZ7OsrJbaXBs7o9g8.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Qp/qPmv5snMrDw830S6hSICDcnIy7kVEWoFKXhGKT38lG4.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Qp/qPmv5snMrDw830S6hSICDcnIy7kVEWoFKXhGKT38lG4.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Sf/sfrfInL6f1rZw4VM1RFeRu7a__usukpRJ0jmMyAtd0E.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Sf/sfrfInL6f1rZw4VM1RFeRu7a__usukpRJ0jmMyAtd0E.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/WQ/wQRZeug5wPyMRyAWm_dz_Dr0j70P6fZ2MKZW0oKn5hQ.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/WQ/wQRZeug5wPyMRyAWm_dz_Dr0j70P6fZ2MKZW0oKn5hQ.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/X7/x7PYh8DJvPykcEqpVab2vcY9-GFz-3cqtoMlRAu94Uc.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/X7/x7PYh8DJvPykcEqpVab2vcY9-GFz-3cqtoMlRAu94Uc.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Xg/Xgr5JnEV_79_aHsCk-Hdy3M4VcjAUnQq_4DfUGImFZw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Xg/Xgr5JnEV_79_aHsCk-Hdy3M4VcjAUnQq_4DfUGImFZw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Ya/YayMISAqD-Y3vBFywwKrXbUovGf5o77HUF5s8mnQgO0.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Ya/YayMISAqD-Y3vBFywwKrXbUovGf5o77HUF5s8mnQgO0.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/_D/_dP6K1bJ1M_sCuJf6-fhmyCorVDIV-OK6eml1K9xJ-I.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/_D/_dP6K1bJ1M_sCuJf6-fhmyCorVDIV-OK6eml1K9xJ-I.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/as/ASJB9qpn-sbP8oIO3clubaW24_ADiZh_qjOsRSp75L4.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/as/ASJB9qpn-sbP8oIO3clubaW24_ADiZh_qjOsRSp75L4.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/bx/BxzoG0KxeNLac4xTNeJv3qfeytbNBw58xj2zD-xdbrE.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/bx/BxzoG0KxeNLac4xTNeJv3qfeytbNBw58xj2zD-xdbrE.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/c8/C8iGiwOuWqognYDvOPXvTj6hi4n8ksFB_CrOQnZF57M.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/c8/C8iGiwOuWqognYDvOPXvTj6hi4n8ksFB_CrOQnZF57M.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/mF/MftAxdCPkv2Kqd7Gti_EE4nlXhQgQobB2n4tFwre9zE.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/mF/MftAxdCPkv2Kqd7Gti_EE4nlXhQgQobB2n4tFwre9zE.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/mq/mqHiEpfmBd2ggUkeXVW3l6Hz2xTMJ3AgHZqOdhq3m0Q.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/mq/mqHiEpfmBd2ggUkeXVW3l6Hz2xTMJ3AgHZqOdhq3m0Q.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/nX/nxTv3sKVUQZADJyM3dPaVmUA78MIsMLD_K279yN_GsI.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/nX/nxTv3sKVUQZADJyM3dPaVmUA78MIsMLD_K279yN_GsI.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/nq/Nqqfh82DCiV1cSW-MqoQytXztwfJrlz-GzgP-Yz5--8.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/nq/Nqqfh82DCiV1cSW-MqoQytXztwfJrlz-GzgP-Yz5--8.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/pW/PWvF-i800GscKdWRcneqA0rnYLpnNwjF6G_oBkb29V0.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/pW/PWvF-i800GscKdWRcneqA0rnYLpnNwjF6G_oBkb29V0.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qH/QH43-ZpvGzeKM-5MJvv34kKoe9AH5csoTBP-rENMqWg.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qH/QH43-ZpvGzeKM-5MJvv34kKoe9AH5csoTBP-rENMqWg.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qR/QrXMORmtnT5mshxTP9-ZmiGwsADFoZrhJtnPyI_A7tU.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qR/QrXMORmtnT5mshxTP9-ZmiGwsADFoZrhJtnPyI_A7tU.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qS/qSnUapsDM7W61ROJ3srukl4GM12Bp5ACjc7DbWxBIcw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/qS/qSnUapsDM7W61ROJ3srukl4GM12Bp5ACjc7DbWxBIcw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/rR/Rr0_4O6W1PdZwItVOct6Ewr5u8k6_36WqiEWLwnVI5I.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/rR/Rr0_4O6W1PdZwItVOct6Ewr5u8k6_36WqiEWLwnVI5I.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/rU/RumaqKnltbOUUPrchya6jY-0G4wzlq9gbC1268vK4Iw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/rU/RumaqKnltbOUUPrchya6jY-0G4wzlq9gbC1268vK4Iw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/sO/soAmvyEYmuYoJ3gcNKY0qlV8Q8i_l2VNzl3mV8d28Mc.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/sO/soAmvyEYmuYoJ3gcNKY0qlV8Q8i_l2VNzl3mV8d28Mc.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/sg/sgMQ-2h9-Hmt7znnkSH1-yYy_3GypgpWmOjufBBE6YY.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/sg/sgMQ-2h9-Hmt7znnkSH1-yYy_3GypgpWmOjufBBE6YY.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/tw/Twe-4qXeSF3qAOkbf_PEOpqMG9HeB61CFxePyU7Cw2o.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/tw/Twe-4qXeSF3qAOkbf_PEOpqMG9HeB61CFxePyU7Cw2o.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/uH/UH3HLs6PZD_N08Z-s3PtDPJLuCAS7wqduHL2OHXN5Ss.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/uH/UH3HLs6PZD_N08Z-s3PtDPJLuCAS7wqduHL2OHXN5Ss.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/u_/u_RwDBMH-uPWLYXMeoslkZm4PAD2vrAzcjOJwtwP1E4.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/u_/u_RwDBMH-uPWLYXMeoslkZm4PAD2vrAzcjOJwtwP1E4.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/uc/UCzX4BrqN11A6xP6iLccV1u_0qqqaeZPl-1uA3XMCKw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/uc/UCzX4BrqN11A6xP6iLccV1u_0qqqaeZPl-1uA3XMCKw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vU/VU-ybTKyJAn0oQlCgqeqkRKbWDuVM9c6BLoodNCn4-4.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vU/VU-ybTKyJAn0oQlCgqeqkRKbWDuVM9c6BLoodNCn4-4.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/ww/Wwe3xXiKEbMnvTrqetmqpWHRuR5DEEQRMQ8bQYOC9sU.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/ww/Wwe3xXiKEbMnvTrqetmqpWHRuR5DEEQRMQ8bQYOC9sU.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/xH/XHT4Y69kcADVCGERs3qojzVACa4yAbXbqDSc4PxdI6Y.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/xH/XHT4Y69kcADVCGERs3qojzVACa4yAbXbqDSc4PxdI6Y.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/yR/YRtNedojszkms5MOGxNZ1HkdEKOLJuy7p7iu7jRTuv4.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/yR/YRtNedojszkms5MOGxNZ1HkdEKOLJuy7p7iu7jRTuv4.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/za/Za3z4Fid8q1DwPJINV3U0vQTmBUR88SI4RjaKva09zw.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/za/Za3z4Fid8q1DwPJINV3U0vQTmBUR88SI4RjaKva09zw.cache" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/zs/ZSWhA_x3ao7yBnhp0HljjGHt5vWdaqquFOFI-HRQjEg.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/zs/ZSWhA_x3ao7yBnhp0HljjGHt5vWdaqquFOFI-HRQjEg.cache" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -76,112 +19,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="73" lean-forward="false" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2668">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="brand.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/brand.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comment.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phone.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/phone.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publication.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/publication.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="question.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/question.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="advertisement.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/advertisement.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application_record.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>act</find>
+      <find>background-color: #B9C4D9;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,6 +35,7 @@
       <list>
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/usershows/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -252,6 +96,13 @@
               <item name="Celuprecios" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Celuprecios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Celuprecios" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Celuprecios" type="b2602c69:ProjectViewProjectNode" />
@@ -398,23 +249,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542931437233</updated>
-      <workItem from="1542931443340" duration="1648000" />
+      <workItem from="1542931443340" duration="2216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1648000" />
+    <option name="totallyTimeSpent" value="2216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -423,7 +274,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -449,14 +299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/usershows/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/publications/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -465,41 +307,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="82" column="28" lean-forward="true" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="73" lean-forward="false" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/advertisement.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2668">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -513,7 +323,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/phone.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -521,9 +331,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/phone.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-2668">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -549,6 +359,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/advertisement.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-478">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/usershows/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/articles/_article.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>

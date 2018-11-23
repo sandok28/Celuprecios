@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       @advertisementpreferencial = Advertisement.where("state = 'activo1'")
   	end
   		
-  	@publications = Publication.paginate(page: params[:page],per_page: 50).all.ultimos
+  	@publications = Publication.paginate(page: params[:page],per_page: 10).all.ultimos
   	@publication = Publication.new
   end
   def download_doc
