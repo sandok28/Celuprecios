@@ -40,7 +40,12 @@
 		
 		<div class="col-xs-12 field  text-justify border-5" >
 			<h4 class="no-margin letra-times-new-roman">Caracteristicas del telefono: </h4>
-			<%= @article.caracteristicas.truncate(280) %>
+      Sistema operativo: <%= @article.OS %> -
+      Tamaño de pantalla: <%= @article.screen_size %> -
+      Cámara frontal: <%= @article.front_camera %> -
+      Cámara trasera: <%= @article.back_camera %> -
+      Memoria RAM:: <%= @article.ram %> -
+      Almacenamiento interno: <%= @article.internal_storage %>
 		</div>
 		<div class="col-xs-12 field  text-justify border-5" >
 			<h4 class="no-margin letra-times-new-roman">Comentarios del vendedor:</h4>

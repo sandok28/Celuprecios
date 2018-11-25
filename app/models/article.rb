@@ -60,7 +60,7 @@ class Article < ApplicationRecord
   validates :ciudad, presence: { message:  ": Ciudad no especficada"}
   validates :comentario, presence: { message:  ": Comentario no especficado si no tienes, agrega simplemente 'Sin comentarios'"}
   validates :celular, presence: { message:  ": Telefono no especficado si no tienes, agrega simplemente 'No tengo telefono'"}
-  validates :caracteristicas, presence: { message:  ": Caracteristicas del telefono no especficados"}
+  #validates :caracteristicas, presence: { message:  ": Caracteristicas del telefono no especficados"} // se agregaron un poco de campos por este
   validates :brand_id, presence: { message:  ": Especifica una marca"}
   validates :phone_id, presence: { message:  ": Especifica un telefono"}
 
