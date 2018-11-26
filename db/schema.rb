@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204224343) do
+ActiveRecord::Schema.define(version: 20181125222244) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "name"
@@ -74,6 +74,12 @@ ActiveRecord::Schema.define(version: 20170204224343) do
     t.integer  "brand_id"
     t.string   "priority",           default: "normal"
     t.string   "celular"
+    t.string   "OS"
+    t.string   "screen_size"
+    t.string   "front_camera"
+    t.string   "back_camera"
+    t.string   "ram"
+    t.string   "internal_storage"
     t.index ["brand_id"], name: "index_articles_on_brand_id"
     t.index ["phone_id"], name: "index_articles_on_phone_id"
     t.index ["user_id"], name: "index_articles_on_user_id"

@@ -116,15 +116,38 @@
 				</ul>
 			</div>
 		</div>
+    <h1>Caracteristicas del celular:</h1>
+    <div class="field", >
+      <%= f.label :OS,"Sistema operativo:" %><br />
+      <%= f.text_field :OS,  class: "from-control"%>
+    </div>
+    <div class="field", >
+      <%= f.label :screen_size,"Tamaño de pantalla:" %><br />
+      <%= f.text_field :screen_size,  class: "from-control"%>
+    </div>
+    <div class="field", >
+      <%= f.label :front_camera,"Cámara frontal:" %><br />
+      <%= f.text_field :front_camera,  class: "from-control"%>
+    </div>
+    <div class="field", >
+      <%= f.label :back_camera,"Cámara trasera:" %><br />
+      <%= f.text_field :back_camera,  class: "from-control"%>
+    </div>
+
+    <div class="field", >
+      <%= f.label :ram,"Memoria RAM:" %><br />
+      <%= f.text_field :ram,  class: "from-control"%>
+    </div>
+    <div class="field", >
+      <%= f.label :internal_storage,"Almacenamiento interno:" %><br />
+      <%= f.text_field :internal_storage,  class: "from-control"%>
+    </div>
 
 		<div class="field", >
 			<%= f.label :comentario, "Comentarios que desee agregar:" %><br />
 			<%= f.text_area :comentario, size: "12x4", class: "from-control"%>
 		</div>
-		<div class="field", >
-			<%= f.label :caracteristicas, "Caracteristicas del celular:" %><br />
-			<%= f.text_area :caracteristicas, size: "12x4", class: "from-control"%>
-		</div>
+
 
 		<div class="field List-without-points">
 			<h2>
