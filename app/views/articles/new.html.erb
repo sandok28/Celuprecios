@@ -37,28 +37,28 @@
 			<%= f.grouped_collection_select :phone_id, Brand.order(:name), :phones, :name, :id, :name, class: "from-control"%>
 		</div>
 
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :precio, "Precio:" %><br />
 			<%= f.text_field :precio, class: "from-control"%>
 		</div>
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :precio_minimo, "Precio minimo:" %><br />
 			<%= f.text_field :precio_minimo, class: "from-control"%>
 		</div>
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :ciudad, "Ciudad:" %><br />
 			<%= f.text_field :ciudad, class: "from-control"%>
 		</div>
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :celular, "Numero telefonico de contacto" %><br />
 			<%= f.text_field :celular, class: "from-control"%>
 		</div>
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :estado_fisico, "Estado fisico:" %><br />
 			<%= select_tag :estado_fisico, options_for_select((1..10).to_a, nil), name: "article[estado_fisico]" %>
 			<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
 		</div>
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :estado_funcional, "Estado funcional:" %><br />
 			<%= select_tag :estado_funcional, options_for_select((1..10).to_a, nil), name: "article[estado_funcional]" %>
 			<%= link_to "Ver estandar", "https://es.wikipedia.org/wiki/Norma_(tecnolog%C3%ADa)"%>
@@ -117,33 +117,33 @@
 			</div>
 		</div>
     <h1>Caracteristicas del celular:</h1>
-    <div class="field", >
-      <%= f.label :OS,"Sistema operativo:" %><br />
-      <%= f.text_field :OS,  class: "from-control"%>
+    <div class="field" >
+      <%= f.label :operating_system,"Sistema operativo:" %><br />
+      <%= f.text_field :operating_system,  class: "from-control"%>
     </div>
-    <div class="field", >
+    <div class="field" >
       <%= f.label :screen_size,"Tamaño de pantalla:" %><br />
       <%= f.text_field :screen_size,  class: "from-control"%>
     </div>
-    <div class="field", >
+    <div class="field" >
       <%= f.label :front_camera,"Cámara frontal:" %><br />
       <%= f.text_field :front_camera,  class: "from-control"%>
     </div>
-    <div class="field", >
+    <div class="field" >
       <%= f.label :back_camera,"Cámara trasera:" %><br />
       <%= f.text_field :back_camera,  class: "from-control"%>
     </div>
 
-    <div class="field", >
+    <div class="field" >
       <%= f.label :ram,"Memoria RAM:" %><br />
       <%= f.text_field :ram,  class: "from-control"%>
     </div>
-    <div class="field", >
+    <div class="field" >
       <%= f.label :internal_storage,"Almacenamiento interno:" %><br />
       <%= f.text_field :internal_storage,  class: "from-control"%>
     </div>
 
-		<div class="field", >
+		<div class="field" >
 			<%= f.label :comentario, "Comentarios que desee agregar:" %><br />
 			<%= f.text_area :comentario, size: "12x4", class: "from-control"%>
 		</div>
