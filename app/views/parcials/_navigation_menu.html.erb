@@ -1,89 +1,64 @@
-<header>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<%= link_to (image_tag "logo.png"), root_path, class: " no-padding", data: { turbolinks: false}%>
- 		<a class="navbar-brand col-xs-2 top-space no-padding text-left" href="/">
- 			Celuprecios
- 		</a>
-  
-	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon">
-		    	
-		    </span>
-	    </button>
-
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-		    <ul class="navbar-nav col-xs-5">
-		    	<li class="nav-item active col-xs-2">
-		    		<a class="nav-link" href="http://celuprecios.blogspot.com.co">
-		    			Blogs
-		    			<span class="sr-only">
-		    				(current)
-		    			</span>
-		    		</a>
-		        </li>
-		        <li class="nav-item col-xs-2">
-		        	<a class="nav-link" href="#">
-		        		Link
-		        	</a>
-		        </li>
-		        
-			    <li class="nav-item col-xs-2">
-			        <a class="nav-link disabled" href="#">
-			        	Disabled
-			    	</a>
-			    </li>
-		    </ul>
-		    
-			
-		    <form class="form-inline my-1 my-lg-0" method="get" data-remote="true"  action="/search/create">
-		    	<input class="form-control mr-sm-2" name="keyword" id="keyword" type="search" placeholder="Que buscas" aria-label="Que buscas">
-		    		<button class="btn btn-outline-success my-2 my-sm-0" type="submit"  >
-		    			Buscar
-		    		</button>
-		    </form>
-
-		   
-	        <% if user_signed_in? %>
-				<li class="col-xs">
-					<%= link_to "Mi perfil", usershow_path(current_user.id) %>
+<nav class="navbar navbar-expand-lg bg-primary">
+	<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar" aria-controls="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-bar bar1"></span>
+			<span class="navbar-toggler-bar bar2"></span>
+			<span class="navbar-toggler-bar bar3"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<%= link_to (image_tag "logo.png"), root_path, class: " no-padding", data: { turbolinks: false}%>
+			<a class="navbar-brand" href="#">CELUPRECIOS</a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://celuprecios.blogspot.com.co">Blogs <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="col-xs">
-					<% if current_user.is_admin_user? %>
-						<%= link_to "Panel de control", administration_path %>
-					<% else %>
-						<%= link_to "Vender +", new_article_path, data: { turbolinks: false} %>
-					<%end%>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Vender</a>
 				</li>
-				<li class="col-xs">
-					<%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Iniciar Sesión</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/users/sign_up">Registrarse</a>
+				</li>
+			</ul>
+			<form class="form-inline ml-auto" method="get" data-remote="true" action="/search/create">
+				<div class="form-group has-white">
+					<input type="text" class="form-control" name="keyword" id="keyword" type="search" placeholder="Buscar productos">
+					<button class="btn btn-neutral" type="submit">
+						Buscar
+					</button>
+				</div>
+			</form>
+
+			<% if user_signed_in? %>
+			<li class="col-xs">
+				<%= link_to "Mi perfil", usershow_path(current_user.id) %>
+			</li>
+			<li class="col-xs">
+				<% if current_user.is_admin_user? %>
+				<%= link_to "Panel de control", administration_path %>
+				<% else %>
+				<%= link_to "Vender +", new_article_path, data: { turbolinks: false} %>
+				<%end%>
+			</li>
+			<li class="col-xs">
+				<%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+			</li>
 			<% else %>
-				
-					<a id="myBtnlogin3" class="nav-link">
-					  Vender +
-					</a>
-				
-				<a id="myBtnlogin" class="nav-link">
-					  Iniciar sesion
-				</a>
 
-
-				<a data-turbolinks="false" class="nav-link" href="/users/sign_up">Crear cuenta</a>
-				
 			<%end%>
+
 		</div>
-	</nav>
+	</div>
+</nav>
 
 
+<header>
 
+	<div class=" List-without-points letra-times-new-roman fondo-barra" style="font-size: 1.2em; ">
 
-
-
-
-	<div class=" List-without-points letra-times-new-roman fondo-barra" style="font-size: 1.2em; " >
-		
 		<ul class="no-list row center-xs middle-xs no-margin">
 			<li class="row col-xs">
 				<%= link_to (image_tag "logo.png"), root_path, class: "col-xs-4 no-padding", data: { turbolinks: false}%>
@@ -94,50 +69,50 @@
 			</li>
 			<li class="col-xs">
 				<div class="box">
-				  <div class="container-4">
-				  	<%= form_tag "/search/create", method: :get, remote: true do %>
+					<div class="container-4">
+						<%= form_tag "/search/create", method: :get, remote: true do %>
 						<%= text_field_tag :keyword, nil, placeholder: "Que buscas"%>
-						<%= content_tag :button, nil, type: :submit, class: "icon no-padding"  do %> 
-							<i class="fa fa-search">
-							<%= image_tag "http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png" %> 
-							</i>
+						<%= content_tag :button, nil, type: :submit, class: "icon no-padding"  do %>
+						<i class="fa fa-search">
+							<%= image_tag "http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png" %>
+						</i>
 						<%end%>
-					<%end%>
-				    
-				  </div>
+						<%end%>
+
+					</div>
 				</div>
 
 			</li>
 			<% if user_signed_in? %>
-				<li class="col-xs">
-					<%= link_to "Mi perfil", usershow_path(current_user.id) %>
-				</li>
-				<li class="col-xs">
-					<% if current_user.is_admin_user? %>
-						<%= link_to "Panel de control", administration_path %>
-					<% else %>
-						<%= link_to "Vender +", new_article_path, data: { turbolinks: false} %>
-					<%end%>
-				</li>
-				<li class="col-xs">
-					<%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
-				</li>
+			<li class="col-xs">
+				<%= link_to "Mi perfil", usershow_path(current_user.id) %>
+			</li>
+			<li class="col-xs">
+				<% if current_user.is_admin_user? %>
+				<%= link_to "Panel de control", administration_path %>
+				<% else %>
+				<%= link_to "Vender +", new_article_path, data: { turbolinks: false} %>
+				<%end%>
+			</li>
+			<li class="col-xs">
+				<%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+			</li>
 			<% else %>
-				<li class="col-xs">
-					<a id="myBtnlogin3" >
-					  Vender +
-					</a>
-				</li>
-				<li class="col-xs">
-					<a id="myBtnlogin" >
-					  Iniciar sesion
-					</a>
-				</li>
-				<li class="col-xs">
-					<%= link_to "Crear cuenta", new_user_registration_path, data: { turbolinks: false} %>
-				</li>
+			<li class="col-xs">
+				<a id="myBtnlogin3">
+					Vender +
+				</a>
+			</li>
+			<li class="col-xs">
+				<a id="myBtnlogin">
+					Iniciar sesion
+				</a>
+			</li>
+			<li class="col-xs">
+				<%= link_to "Crear cuenta", new_user_registration_path, data: { turbolinks: false} %>
+			</li>
 			<%end%>
 		</ul>
-		
+
 	</div>
 </header>
