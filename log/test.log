@@ -1,0 +1,774 @@
+  [1m[35m (46.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20161221233322)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "name" varchar, "permission_level" integer DEFAULT 1, "facebook" varchar, "celular" varchar, "email_state" varchar DEFAULT 'visible', "city" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161221233322"]]
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBrands (20161222000437)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161222000437"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPhotoToUsers (20161222001351)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_updated_at" datetime[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161222001351"]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnLogoToBrands (20161222030523)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "brands" ADD "logo_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "brands" ADD "logo_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "brands" ADD "logo_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "brands" ADD "logo_updated_at" datetime[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161222030523"]]
+  [1m[35m (78.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhones (20161223160555)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "phones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "brand_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_phones_on_brand_id" ON "phones" ("brand_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161223160555"]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateArticles (20161224174138)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "trueque" varchar DEFAULT 'no', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_phone_id" ON "articles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_user_id" ON "articles" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161224174138"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnsPhotosToArticle (20161224175330)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto1_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto1_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto1_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto1_updated_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto2_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto2_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto2_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto2_updated_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto3_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto3_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto3_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto3_updated_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto4_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto4_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto4_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "foto4_updated_at" datetime[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161224175330"]]
+  [1m[35m (31.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveColumnTruequeToArticles (20161224181611)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "trueque" varchar DEFAULT 'no', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_user_id" ON "aarticles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_phone_id" ON "aarticles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aarticles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","trueque","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","trueque","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at" FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_phone_id" ON "articles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_user_id" ON "articles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "articles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at" FROM "aarticles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aarticles"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161224181611"]]
+  [1m[35m (39.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnBrandIdToArticles (20161224191341)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "brand_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_brand_id" ON "articles" ("brand_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161224191341"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDefaultToArticles (20161225000733)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime, "brand_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_brand_id" ON "aarticles" ("brand_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_user_id" ON "aarticles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_phone_id" ON "aarticles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aarticles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id" FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime, "brand_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_phone_id" ON "articles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_user_id" ON "articles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_brand_id" ON "articles" ("brand_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "articles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id" FROM "aarticles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aarticles"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161225000733"]]
+  [1m[35m (44.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdvertisements (20161225183957)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "advertisements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "body" text, "direccion" varchar, "url" varchar, "slogan" varchar, "ciudad" varchar, "state" varchar DEFAULT 'desactivo', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161225183957"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePublications (20161225183958)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "publications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "article_id" integer, "advertisement_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_publications_on_user_id" ON "publications" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_publications_on_article_id" ON "publications" ("article_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_article_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_publications_on_advertisement_id" ON "publications" ("advertisement_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161225183958"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPhotoAndCoverToAdvertisement (20161225184526)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "photo_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "photo_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "photo_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "photo_updated_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "cover_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "cover_content_type" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "cover_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "cover_updated_at" datetime[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161225184526"]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20161231020534)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "comentador" integer, "like" varchar, "body" text, "tipo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161231020534"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestions (20170105232241)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "article_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_user_id" ON "questions" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_article_id" ON "questions" ("article_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170105232241"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToArticle (20170126003939)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "priority" varchar DEFAULT 'normal'[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170126003939"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnPhoneToAdvertisements (20170202231807)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "advertisements" ADD "phone" varchar DEFAULT '0'[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170202231807"]]
+  [1m[35m (34.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnPhoneToArticle (20170203203036)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "celular" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170203203036"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddConfirmableToDevise (20170204224343)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170204224343"]]
+  [1m[35m (22.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFunctionalCharacteristicsToArticle (20181125222244)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "OS" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "screen_size" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "front_camera" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "back_camera" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "ram" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "internal_storage" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181125222244"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeNameColumnOstoArticle (20181127013614)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime, "brand_id" integer, "priority" varchar DEFAULT 'normal', "celular" varchar, "operating_system" varchar, "screen_size" varchar, "front_camera" varchar, "back_camera" varchar, "ram" varchar, "internal_storage" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_brand_id" ON "aarticles" ("brand_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_user_id" ON "aarticles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aarticles_on_phone_id" ON "aarticles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aarticles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id","priority","celular","operating_system","screen_size","front_camera","back_camera","ram","internal_storage")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id","priority","celular","OS","screen_size","front_camera","back_camera","ram","internal_storage" FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[35mDROP TABLE "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_id" integer, "user_id" integer, "precio" integer DEFAULT 0, "precio_minimo" integer DEFAULT 0, "estado_fisico" integer DEFAULT 0, "estado_funcional" integer DEFAULT 0, "cambio" varchar DEFAULT 'no', "caja" varchar DEFAULT 'no', "garantia" varchar DEFAULT 'no', "factura" varchar DEFAULT 'no', "audifonos" varchar DEFAULT 'no', "cargador" varchar DEFAULT 'no', "efectivo" varchar DEFAULT 'si', "ciudad" varchar, "vidriotemplado" varchar DEFAULT 'no', "funda" varchar DEFAULT 'no', "vendido" varchar DEFAULT 'no', "comentario" text, "caracteristicas" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto1_file_name" varchar, "foto1_content_type" varchar, "foto1_file_size" integer, "foto1_updated_at" datetime, "foto2_file_name" varchar, "foto2_content_type" varchar, "foto2_file_size" integer, "foto2_updated_at" datetime, "foto3_file_name" varchar, "foto3_content_type" varchar, "foto3_file_size" integer, "foto3_updated_at" datetime, "foto4_file_name" varchar, "foto4_content_type" varchar, "foto4_file_size" integer, "foto4_updated_at" datetime, "brand_id" integer, "priority" varchar DEFAULT 'normal', "celular" varchar, "operating_system" varchar, "screen_size" varchar, "front_camera" varchar, "back_camera" varchar, "ram" varchar, "internal_storage" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aarticles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aarticles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_phone_id" ON "articles" ("phone_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_user_id" ON "articles" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_brand_id" ON "articles" ("brand_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "articles" ("id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id","priority","celular","operating_system","screen_size","front_camera","back_camera","ram","internal_storage")
+                     SELECT "id","phone_id","user_id","precio","precio_minimo","estado_fisico","estado_funcional","cambio","caja","garantia","factura","audifonos","cargador","efectivo","ciudad","vidriotemplado","funda","vendido","comentario","caracteristicas","created_at","updated_at","foto1_file_name","foto1_content_type","foto1_file_size","foto1_updated_at","foto2_file_name","foto2_content_type","foto2_file_size","foto2_updated_at","foto3_file_name","foto3_content_type","foto3_file_size","foto3_updated_at","foto4_file_name","foto4_content_type","foto4_file_size","foto4_updated_at","brand_id","priority","celular","operating_system","screen_size","front_camera","back_camera","ram","internal_storage" FROM "aarticles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aarticles"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181127013614"]]
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-12-02 17:03:01.615856"], ["updated_at", "2018-12-02 17:03:01.615856"]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_phone_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_phones_on_brand_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_phones_on_brand_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_advertisement_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_advertisement_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_article_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_publications_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_article_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:09.944680', '2018-12-02 17:03:09.944680', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:09.944680', '2018-12-02 17:03:09.944680', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (8.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.239794', '2018-12-02 17:03:11.239794', 980190962)[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.239794', '2018-12-02 17:03:11.239794', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (8.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.279076', '2018-12-02 17:03:11.279076', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.279076', '2018-12-02 17:03:11.279076', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.327367', '2018-12-02 17:03:11.327367', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.327367', '2018-12-02 17:03:11.327367', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.373018', '2018-12-02 17:03:11.373018', 980190962)[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.373018', '2018-12-02 17:03:11.373018', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (8.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.412911', '2018-12-02 17:03:11.412911', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.412911', '2018-12-02 17:03:11.412911', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (6.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.456191', '2018-12-02 17:03:11.456191', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.456191', '2018-12-02 17:03:11.456191', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (8.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.499061', '2018-12-02 17:03:11.499061', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.499061', '2018-12-02 17:03:11.499061', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (7.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.539017', '2018-12-02 17:03:11.539017', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.539017', '2018-12-02 17:03:11.539017', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.581650', '2018-12-02 17:03:11.581650', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.581650', '2018-12-02 17:03:11.581650', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (11.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.630048', '2018-12-02 17:03:11.630048', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.630048', '2018-12-02 17:03:11.630048', 298486374)[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (9.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.676691', '2018-12-02 17:03:11.676691', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.676691', '2018-12-02 17:03:11.676691', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (9.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (4.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.717602', '2018-12-02 17:03:11.717602', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.717602', '2018-12-02 17:03:11.717602', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (7.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.749024', '2018-12-02 17:03:11.749024', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.749024', '2018-12-02 17:03:11.749024', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.798671', '2018-12-02 17:03:11.798671', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:03:11.798671', '2018-12-02 17:03:11.798671', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (10.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (31.3ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:07.647149', '2018-12-02 17:31:07.647149', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:07.647149', '2018-12-02 17:31:07.647149', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.745886', '2018-12-02 17:31:08.745886', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.745886', '2018-12-02 17:31:08.745886', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (62.5ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.777124', '2018-12-02 17:31:08.777124', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.777124', '2018-12-02 17:31:08.777124', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (31.3ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.870825', '2018-12-02 17:31:08.870825', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.870825', '2018-12-02 17:31:08.870825', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (31.3ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.933346', '2018-12-02 17:31:08.933346', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.933346', '2018-12-02 17:31:08.933346', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (22.9ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.996847', '2018-12-02 17:31:08.996847', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:08.996847', '2018-12-02 17:31:08.996847', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (15.6ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.037725', '2018-12-02 17:31:09.037725', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.037725', '2018-12-02 17:31:09.037725', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.092307', '2018-12-02 17:31:09.092307', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.092307', '2018-12-02 17:31:09.092307', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.123549', '2018-12-02 17:31:09.123549', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.123549', '2018-12-02 17:31:09.123549', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (15.6ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.154790', '2018-12-02 17:31:09.154790', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.154790', '2018-12-02 17:31:09.154790', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.201686', '2018-12-02 17:31:09.201686', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.201686', '2018-12-02 17:31:09.201686', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.232932', '2018-12-02 17:31:09.232932', 980190962)[0m
+  [1m[36mFixture Insert (15.6ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.232932', '2018-12-02 17:31:09.232932', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (15.7ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.264140', '2018-12-02 17:31:09.264140', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.264140', '2018-12-02 17:31:09.264140', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.311036', '2018-12-02 17:31:09.311036', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.311036', '2018-12-02 17:31:09.311036', 298486374)[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (15.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "advertisements"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.342269', '2018-12-02 17:31:09.342269', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "advertisements" ("name", "body", "direccion", "url", "slogan", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2018-12-02 17:31:09.342269', '2018-12-02 17:31:09.342269', 298486374)[0m
+  [1m[36mFixture Delete (15.6ms)[0m  [1m[31mDELETE FROM "articles"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
