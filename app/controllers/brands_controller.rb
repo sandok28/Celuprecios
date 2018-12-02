@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
+  before_action :authenticate_admin_user!
   
 	def index
   end

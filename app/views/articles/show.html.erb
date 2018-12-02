@@ -89,7 +89,11 @@
 					Ciudad:
 				</div>
 				<div class="col-xs-6 ">
-					<%= @article.ciudad %>
+          <% if !@article.city.nil? %>
+            <%= @article.city.name%>
+          <% else %>
+            No disponible
+          <%end%>
 				</div>
 			</div>
 			<div class="row col-xs-12 top-space">
