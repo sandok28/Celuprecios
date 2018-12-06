@@ -32,6 +32,17 @@
 				</div>
 			<%end%>
 		</div>
+
+    <div>
+      <%= form_tag "cities_search", method: :get do %>
+        <%= collection_select :city, :id, City.order(:name), :id, :name, prompt: 'Busca en tu ciudad', class: "from-control"%>
+        <%= content_tag :button, nil, type: :submit, class: "icon no-padding"  do %>
+          <i class="fa fa-search">
+            <%= image_tag "http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png" %>
+          </i>
+        <%end%>
+      <%end%>
+    </div>
 		<%= render @articlepreferencial %>
 		<%= render @advertisementpreferencial %>
  		<% @publications.each do |publication| %>

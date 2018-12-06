@@ -2,6 +2,10 @@ class CitiesController < ApplicationController
   before_action :authenticate_admin_user!, except: [:show]
   before_action :set_city, only: [:show, :edit, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    redirect_to :root
+  end
+
   # GET /cities
   # GET /cities.json
   def index
@@ -11,6 +15,8 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
+    @city_articles = City.find(params[:id]).articles.paginate(page: params[:page],per_page: 5).order("created_at DESC")
+    @city = City.find(params[:id])
   end
 
   # GET /cities/new
@@ -61,6 +67,14 @@ class CitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+
+    @city_articles = City.find(params[:city][:id]).articles.paginate(page: params[:page],per_page: 5).order("created_at DESC")
+    @city = City.find(params[:city][:id])
+    render :show
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

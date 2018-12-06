@@ -14,13 +14,13 @@
 				<div class="box">
 				  <div class="container-4">
 				  	<%= form_tag "/search/create", method: :get, remote: true do %>
-						<%= text_field_tag :keyword, nil, placeholder: "Que buscas"%>
-						<%= content_tag :button, nil, type: :submit, class: "icon no-padding"  do %> 
+						  <%= text_field_tag :keyword, nil, placeholder: "Que buscas"%>
+              <%= content_tag :button, nil, type: :submit, class: "icon no-padding"  do %>
 							<i class="fa fa-search">
-							<%= image_tag "http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png" %> 
+							  <%= image_tag "http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png" %>
 							</i>
-						<%end%>
-					<%end%>
+						  <%end%>
+					  <%end%>
 				    
 				  </div>
 				</div>
