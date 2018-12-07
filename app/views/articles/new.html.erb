@@ -46,8 +46,8 @@
 			<%= f.text_field :precio_minimo, class: "from-control"%>
 		</div>
 		<div class="field" >
-			<%= f.label :ciudad, "Ciudad:" %><br />
-			<%= f.text_field :ciudad, class: "from-control"%>
+      <%= f.label :city, "Ciudad:" %><br />
+      <%= f.collection_select :city_id, City.order(:name), :id, :name, class: "from-control"%>
 		</div>
 		<div class="field" >
 			<%= f.label :celular, "Numero telefonico de contacto" %><br />

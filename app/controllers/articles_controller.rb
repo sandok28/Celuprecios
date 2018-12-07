@@ -127,7 +127,8 @@ class ArticlesController < ApplicationController
                                         :front_camera,
                                         :back_camera,
                                         :ram,
-                                        :internal_storage)
+                                        :internal_storage,
+                                        :city_id)
       else
        params.require(:article).permit(:vendido,
                                        :brand_id,
@@ -150,14 +151,14 @@ class ArticlesController < ApplicationController
                                        :foto2,
                                        :foto3,
                                        :foto4,
-                                       :ciudad,
                                        :celular,
                                        :operating_system,
                                        :screen_size,
                                        :front_camera,
                                        :back_camera,
                                        :ram,
-                                       :internal_storage)
+                                       :internal_storage,
+                                       :city_id)
       end
     end
     

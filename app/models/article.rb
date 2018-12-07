@@ -45,6 +45,7 @@ class Article < ApplicationRecord
   belongs_to :phone
   belongs_to :user
   belongs_to :brand
+  belongs_to :city
   has_many :publications
   has_many :questions
   
@@ -57,12 +58,13 @@ class Article < ApplicationRecord
   validates :precio_minimo, presence: { message:  ": Precio minimo no especficado"}
   validates :estado_fisico, presence: { message:  ": Estado fisico no especficado"}
   validates :estado_funcional, presence: { message:  ": Estado funcional no especficado"}
-  validates :ciudad, presence: { message:  ": Ciudad no especficada"}
   validates :comentario, presence: { message:  ": Comentario no especficado si no tienes, agrega simplemente 'Sin comentarios'"}
   validates :celular, presence: { message:  ": Telefono no especficado si no tienes, agrega simplemente 'No tengo telefono'"}
   #validates :caracteristicas, presence: { message:  ": Caracteristicas del telefono no especficados"} // se agregaron un poco de campos por este
   validates :brand_id, presence: { message:  ": Especifica una marca"}
   validates :phone_id, presence: { message:  ": Especifica un telefono"}
+  validates :city_id, presence: { message:  ": Especifica una ciudad"}
+
 
   aasm(:priority) do
     state :normal, :initial => true

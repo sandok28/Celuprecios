@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  
  
 
+  resources :cities
   get 'muestra/principal'
 
   get 'muestra/segundo'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get 'download_pdf', to: "home#download_doc", as: 'download_contrato'
   get 'articles/photo/:id,:article', to: "articles#photo", as: 'photo_article'
   get 'search/create'
+  get 'cities_search', to: 'cities#search'
   devise_for :users
   resources :questions
   resources :comments

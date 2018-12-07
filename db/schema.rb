@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181127013614) do
+ActiveRecord::Schema.define(version: 20181202154709) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "name"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20181127013614) do
     t.string   "audifonos",          default: "no"
     t.string   "cargador",           default: "no"
     t.string   "efectivo",           default: "si"
-    t.string   "ciudad"
+    t.integer  "ciudad"
     t.string   "vidriotemplado",     default: "no"
     t.string   "funda",              default: "no"
     t.string   "vendido",            default: "no"
@@ -80,7 +80,9 @@ ActiveRecord::Schema.define(version: 20181127013614) do
     t.string   "back_camera"
     t.string   "ram"
     t.string   "internal_storage"
+    t.integer  "city_id"
     t.index ["brand_id"], name: "index_articles_on_brand_id"
+    t.index ["city_id"], name: "index_articles_on_city_id"
     t.index ["phone_id"], name: "index_articles_on_phone_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -93,6 +95,12 @@ ActiveRecord::Schema.define(version: 20181127013614) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
