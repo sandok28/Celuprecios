@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
+  before_action :authenticate_admin_user!, except: [:show, :search]
   before_action :set_city, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound do |exception|

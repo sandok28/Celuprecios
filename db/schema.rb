@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20181202154709) do
     t.string   "audifonos",          default: "no"
     t.string   "cargador",           default: "no"
     t.string   "efectivo",           default: "si"
-    t.integer  "ciudad"
     t.string   "vidriotemplado",     default: "no"
     t.string   "funda",              default: "no"
     t.string   "vendido",            default: "no"

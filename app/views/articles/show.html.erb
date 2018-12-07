@@ -89,7 +89,7 @@
 					Ciudad:
 				</div>
 				<div class="col-xs-6 ">
-          <% if !@article.city.nil? %>
+          <% unless @article.city.nil? %>
             <%= @article.city.name%>
           <% else %>
             No disponible
