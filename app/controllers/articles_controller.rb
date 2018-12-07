@@ -119,7 +119,6 @@ class ArticlesController < ApplicationController
                                         :foto2,
                                         :foto3,
                                         :foto4,
-                                        :ciudad,
                                         :priority,
                                         :celular,
                                         :operating_system,

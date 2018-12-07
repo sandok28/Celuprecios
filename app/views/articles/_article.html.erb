@@ -44,7 +44,9 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-6 text-left letra-times-new-roman grey">
-				<%= article.ciudad %>
+        <% unless article.city.nil? %>
+				  <%= article.city.name %>
+        <% end %>
 			</div>
 			<div class="col-xs-6 last-xs text-right letra-times-new-roman negrilla">
 				Precio: <%= number_to_currency(article.precio, precision: 0)%>
