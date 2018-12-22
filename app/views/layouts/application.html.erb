@@ -18,15 +18,15 @@
   <%= render "parcials/navigation_menu" %>
     <%= render "parcials/barrainfo" %>
 		
-		<div class="row "  style="margin-top: 2em; ">
-			<div class="row col-xs-2 " style="margin-top: 3em;">
+		<div class="row " >
+			<div class="col-xs-12 col-md-2 " style="margin-top: 3em;">
 				<div class="col-xs-12 div-border-right">
 					<div class="center-xs ">
 						<h2 class="no-margin top-space ">
 							<%= image_tag "categorias.jpg" %>
 						</h2>
 					</div>
-					<div class="row around-xs total-padding "  >
+					<div class="col-xs-12 col-md-2  "  >
 						<%= render "brands/brand" %>
             <script type="text/javascript">
                 var ad_idzone = "2503911",
@@ -40,7 +40,7 @@
 				</div>
 				
 			</div>
-			<div class="col-xs">
+			<div class="col-xs-12 col-md-8">
 				<div style="width: 90%; margin: 0 auto;">
 					<div style="<%= "display: none; " if notice.nil? and alert.nil? %>" >
 						<div class="row center-xs letra-times-new-roman">
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row col-xs-2 center-xs" style="margin-top: 3em; ">
+			<div class="col-xs-12 col-md-2 center-xs" style="margin-top: 3em; ">
 				<div class="col-xs-8 div-border-left">
 					<%= image_tag "Boton_de_Blogs.jpg", class: "bottom-space", style: "margin-left: 20px;", style: ""%>
 					<%= render "parcials/advertisement" %>
