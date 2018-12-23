@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   	<head>
   		
    		<title>Celuprecios</title>
@@ -9,7 +10,13 @@
 	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	   
 	    <%= favicon_link_tag 'logo_navegador.ico' %>
-
+	    <STYLE TYPE="text/css" MEDIA=screen>
+		@media screen and (max-width: 750px) {
+		.capa_a_ocultar{
+			display:none;
+			}
+		}
+		</STYLE>
   	</head>
 
 	  
@@ -33,14 +40,22 @@
                     ad_width = "468",
                     ad_height = "60";
             </script>
-            <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
-            <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
+            <div class="capa_a_ocultar">
+            	<script type="text/javascript" src="https://ads.exdynsrv.com/ads.js">
+            		
+            	</script>
+           		<noscript>
+           			<a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60">
+           			</a>
+           		</noscript>
+            </div>
+            
 
           </div>
 				</div>
 				
 			</div>
-			<div class="col-xs-12 col-md-8">
+			<div class="col-xs-12 col-md-10">
 				<div style="width: 90%; margin: 0 auto;">
 					<div style="<%= "display: none; " if notice.nil? and alert.nil? %>" >
 						<div class="row center-xs letra-times-new-roman">
@@ -58,19 +73,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-2 center-xs" style="margin-top: 3em; ">
-				<div class="col-xs-8 div-border-left">
-					<%= image_tag "Boton_de_Blogs.jpg", class: "bottom-space", style: "margin-left: 20px;", style: ""%>
-					<%= render "parcials/advertisement" %>
-          <script type="text/javascript">
-              var ad_idzone = "2503911",
-                  ad_width = "468",
-                  ad_height = "60";
-          </script>
-          <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
-          <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
 
-        </div>
+
+			<div class="capa_a_ocultar">
+				<div class="col-xs-12 col-md-2 center-xs" style="margin-top: 3em; ">
+					<div class="col-xs-8 div-border-left">
+						<%= image_tag "Boton_de_Blogs.jpg", class: "bottom-space", style: "margin-left: 20px;", style: ""%>
+						<%= render "parcials/advertisement" %>
+	          <script type="text/javascript">
+	              var ad_idzone = "2503911",
+	                  ad_width = "468",
+	                  ad_height = "60";
+	          </script>
+	          
+
+
+	          <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
+	          <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
+			  </div>
+	        
+				</div>
 			</div>
 		</div>
     </body>

@@ -80,7 +80,7 @@ a,a:visited{
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	font-size: 22px;
+	font-size: 20px;
 }
 .border-5{
 	border: #57747F 2px solid;
@@ -169,7 +169,7 @@ a,a:visited{
 	text-align: center !important;
 }
 .text-justify{
-	text-align: justify-all; !important;
+	text-align: justify-all !important;
 }
 .text-right{
 	text-align: right;
