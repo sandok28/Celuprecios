@@ -45,12 +45,20 @@
 		<div class="row">
 			
 			<div class="col-xs-6 last-xs text-right letra-times-new-roman negrilla">
+				<% unless article.city.nil? %>
+				  <%= article.city.name %>
+        <% end %>
 				<%= number_to_currency(article.precio, precision: 0)%>
 			</div>
 		</div>
 		<div class="text-justify letra-lucida-grande">
-			caracteristicas: 
-			 <%= article.caracteristicas.truncate(410) %>
+			<h4 style="margin: 5px; margin-left: 0px"> caracteristicas: </h4>
+		      Sistema operativo: <%= article.operating_system %> -
+		      Tamaño de pantalla: <%= article.screen_size %> -
+		      Cámara frontal: <%= article.front_camera %> -
+		      Cámara trasera: <%= article.back_camera %> -
+		      Memoria RAM:: <%= article.ram %> -
+		      Almacenamiento interno: <%= article.internal_storage %>
 		</div>
 	<% end %>
 	<div class="row col-xs-12 no-margin no-padding">
