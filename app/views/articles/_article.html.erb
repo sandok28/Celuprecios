@@ -2,12 +2,12 @@
 <div class="top-space">
 	
 	<div class="row">
-		<div class="col-xs-4 col-md-12 text-left letra-times-new-roman vertical">
+		<div class="col-xs-12 col-md-12 text-left letra-times-new-roman vertical">
 			<%= link_to brand_path(article.brand.id), data: { turbolinks: false}  do %>
 				<%= article.phone.name %>
 			<%end%>
 		</div>
-		<div class="row col-xs-5 last-xs text-right letra-times-new-roman">
+		<div class="row col-xs-12 last-xs text-right letra-times-new-roman">
       <div class="col-xs-2">
         <% if article.user.photo_file_name.nil? %>
             <%= image_tag "new_perfil_mini.png", class: "circular"  %>
