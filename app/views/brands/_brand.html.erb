@@ -1,7 +1,7 @@
 <div class="row">
 	<% @brands.each do |brand| %>
 		<div class="col-xs-1 col-md-6" style="padding: 3%;" >
-			<%= link_to image_tag(brand.logo.url(:mini)), brand, data: { turbolinks: false} %> 
+			<%= link_to image_tag(brand.logo.url(:mini), :class => 'dock-item'), brand, data: { turbolinks: false} %> 
 		</div>
 	<%end%>
 </div>
