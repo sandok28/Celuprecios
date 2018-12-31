@@ -2,8 +2,8 @@
 <div class="row center-xs" >
   	<div class="row col-md-11 top-space letra-lucida-grande">
   		<div class="row col-md-12">
-  			<h1 class="col-xs-7 no-margin text-left letra-times-new-roman " style="font-size: 2.5em; padding-top: 15px; color: #051940 !important;"><%= @user.name %></h1>
-  			 <div class="col-xs-3 row">
+  			<h1 class="col-xs-12 col-md-7 no-margin text-left letra-times-new-roman " style="font-size: 2.5em; padding-top: 15px; color: #051940 !important;"><%= @user.name %></h1>
+  			 <div class="col-xs-12 col-md-3 row">
 		        <% if !@likes_porcentaje_general.nil? %>
 			        <div class="col-xs-6 no-padding">
 			       		<h2 class="no-margin">  
@@ -19,14 +19,14 @@
 		        	</div>
 		        <%end%>
   			</div>
-  			<h3 class="col-xs-2 no-margin text-right top-space grey">
+  			<h3 class="col-xs-12 col-md-2 no-margin text-right top-space grey">
   			Articulos vendidos: <%= @articulos_vendidos %>
 	        </h3>
 
   			<hr class="col-xs-12 no-margin" style="background-color: white;  border: 2px solid #C0CADA;">
   		</div>
-  		<div class="row col-xs-4 top-space">
-  			<div class="col-xs-11 top-space">
+  		<div class="row col-xs-12 col-md-4 top-space">
+  			<div class="col-xs-12 top-space">
   				<div class="field top-space">
   					<% if @user.photo_file_name.nil? %>
 						<%= image_tag "new_perfil_normal.png", class: "circular-max"  %>
@@ -42,7 +42,7 @@
         <div class="row col-xs-12 no-padding">
   				
           <% if user_signed_in? && current_user.id == @user.id %>
-            <div class="col-xs-4 no-padding">
+            <div class="col-xs-12 col-md-4 no-padding">
               <%= link_to (image_tag "iconUser.png"), edit_user_registration_path %>
             </div>
             <div class="col-xs-8 field text-left no-padding">
@@ -60,7 +60,7 @@
 
 
 
-  		<div class="row col-xs-8 " style=" background-color: white; border: 7px solid #C0CADA;	border-top:  7px solid blue;	height:250px;	margin-top: 3em;">
+  		<div class="row col-xs-12 col-md-8" style=" background-color: white; border: 7px solid #C0CADA;	border-top:  7px solid blue;	height:250px;	margin-top: 3em;">
   			<div class="col-xs-12 text-left">
   				<h1 class="letra-times-new-roman" style="font-size: 2.5em; color: #C0CADA;">Datos Personales</h1>
   				<% @id_comentador = @user.id %>
@@ -100,7 +100,7 @@
 
   	<div class="row col-xs-12">
 		<% @user.articles.limit(6).each do |article| %>
-			<div class="col-xs-2 vertical">
+			<div class="col-xs-12 col-md-2 vertical">
 				<%= link_to article_path(article.id),data: { turbolinks: false} do %>
 				 	<div class="text-left  letra-lucida-grande">
 			 			<div class="letra-times-new-roman" style="font-size: 15px;">
@@ -258,9 +258,9 @@
 							</div>
 	        			</div>
 						<div class="row col-xs-12">
-							<div class="row col-xs-5">
-								<h3 class="col-xs-4">Comentar como</h3>
-								<div class="col-xs-6 text-left">
+							<div class="row col-xs-12 col-md-5">
+								<h3 class="col-xs-12 col-md-4">Comentar como</h3>
+								<div class="col-xs-12 col-md-6 text-left">
 									<div class="field">
 										<%= radio_button_tag("comment[tipo]", "comprador", checked:"checked" ) %>
 										<%= label_tag(:tipo, "Comprador") %>
@@ -271,9 +271,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="row col-xs-5">
-								<h3 class="col-xs-4">Que tal te parecio</h3>
-								<div class="col-xs-6 text-left">
+							<div class="row col-xs-12 col-md-5">
+								<h3 class="col-xs-12 col-md-4">Que tal te parecio</h3>
+								<div class="col-xs-12 col-md-6 text-left">
 									<div class="field ">
 										<%= radio_button_tag("comment[like]", "like", checked:"checked" ) %>
 									<%= label_tag(:like, "Me gusta") %>
@@ -284,7 +284,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="field col-xs-2">
+							<div class="field col-xs-12 col-md-2">
 								<% if user_signed_in? %>
 									<%= f.submit "Comentar", class: "btn white be-blue" %>
 								<%else%>
