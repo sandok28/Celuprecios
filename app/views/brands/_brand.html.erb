@@ -1,8 +1,8 @@
 <div class="row">
 	<% @brands.each do |brand| %>
-		<div class="col-xs-1 col-md-6" style="
-    padding-right: 0px;
-    padding-left: 0px;
+		<div class="col-xs-2 col-md-6" style="
+    padding-right: 2%;
+    padding-left: 2%;
 ">
 			<%= link_to image_tag(brand.logo.url(:mini), :class => 'img-fluid'), brand, data: { turbolinks: false} %> 
 		</div>
