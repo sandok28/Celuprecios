@@ -10,7 +10,7 @@
 	   
 	    <%= favicon_link_tag 'logo_navegador.ico' %>
 <STYLE TYPE="text/css" MEDIA=screen>
-		@media screen and (max-width: 750px) {
+		@media screen and (max-width: 767px) {
 		.capa_a_ocultar{
 			display:none;
 			}
@@ -32,15 +32,19 @@
 							<%= image_tag "categorias.jpg" %>
 						</h2>
 					</div>
-					<div class="col-xs-12 capa_a_ocultar"  >
+					<div class="col-xs-12 "  >
 						<%= render "brands/brand" %>
-		            <script type="text/javascript">
+					<div class="capa_a_ocultar">
+						<script type="text/javascript">
 		                var ad_idzone = "2503911",
 		                    ad_width = "468",
 		                    ad_height = "60";
 		            </script>
 		            <script type="text/javascript" src="https://ads.exdynsrv.com/ads.js"></script>
 		            <noscript><a href="https://main.exdynsrv.com/img-click.php?idzone=2503911" target="_blank"><img src="https://syndication.exdynsrv.com/ads-iframe-display.php?idzone=2503911&output=img&type=468x60" width="468" height="60"></a></noscript>
+					</div>
+
+		            
 
           </div>
 				</div>
