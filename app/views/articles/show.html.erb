@@ -12,7 +12,7 @@
 				<%= link_to (image_tag @article.foto1.url(:mini))%>
 			<%end%>
 		</div>
-		<div id="coverslides" class="row col-xs-12 col-md-6  no-padding ">
+		<div id="coverslides" class="row center-xs col-xs-12 col-md-6  no-padding ">
 			<div class="<%= 'slides' unless @cont == 1 %>">
 				<% if  !@article.foto1_file_name.nil? %>
 					<%= link_to (image_tag @article.foto1.url(:mini)), photo_article_path(1,@article.id), data: { turbolinks: false}%>
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<div class="row col-xs-12 col-md-6 no-padding be-small">
-		<div class="col-xs-12">
+		<div class="col-xs-12" style="padding-left: 1em;">
 			<div class="row col-xs-12 center-xs">
 				<div class="row col-xs-11 text-left be-blue letra-times-new-roman" style="border-radius: 15px; font-size: 1.5em;">
 					<div class="col-xs-2 last-xs" style="padding-top: 5px;">
@@ -125,7 +125,7 @@
 				</div>
 			</div>
 			<hr class="col-xs-12 linea">
-			<div class="row col-xs-12">
+			<div class="row col-xs-12 " style="padding-left: 1em;">
 				<h3 class="col-xs-12 no-margin letra-times-new-roman negrilla">Se entrega con</h3>
 				
 				<div class="col-xs-12 List-without-points top-space" >
