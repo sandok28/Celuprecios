@@ -32,9 +32,8 @@ gem "devise"
 gem "paperclip"
 gem "aasm"
 gem "will_paginate"
-gem 'bootstrap'
 gem 'jquery-rails'
-
+gem 'bootstrap-sass', '~> 3.4.0'
 gem 'aws-sdk', '~> 2' #amazon S3 storage for paperclip
 gem "paperclip"
 
