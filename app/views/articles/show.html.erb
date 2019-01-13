@@ -16,22 +16,22 @@
   <div class="carousel-inner">
 		<% if  !@article.foto1_file_name.nil? %>
 			<div class="carousel-item active">
-				<%= link_to (image_tag @article.foto1.url(:mini)), class: "d-block w-100", photo_article_path(1,@article.id), data: { turbolinks: false}%>
+				<%= link_to (image_tag @article.foto1.url(:mini)),:class => 'd-block w-100', photo_article_path(1,@article.id), data: { turbolinks: false}%>
 			</div>
 		<%end%>
 		<% if  !@article.foto2_file_name.nil? %>
 		<div class="carousel-item">
-			<%= link_to (image_tag @article.foto2.url(:mini)), class: "d-block w-100", photo_article_path(2,@article.id), data: { turbolinks: false} %>
+			<%= link_to (image_tag @article.foto2.url(:mini)),:class => 'd-block w-100', photo_article_path(2,@article.id), data: { turbolinks: false} %>
 		</div>
 		<%end%>
 		<% if  !@article.foto3_file_name.nil? %>
 			<div class="carousel-item">
-				<%= link_to (image_tag @article.foto3.url(:mini)), class: "d-block w-100", photo_article_path(3,@article.id), data: { turbolinks: false} %>
+				<%= link_to (image_tag @article.foto3.url(:mini)),:class => 'd-block w-100', photo_article_path(3,@article.id), data: { turbolinks: false} %>
 			</div>
 		<%end%>
 		<% if  !@article.foto4_file_name.nil? %>
 			<div class="carousel-item">
-				<%= link_to (image_tag @article.foto4.url(:mini)), class: "d-block w-100", photo_article_path(4,@article.id), data: { turbolinks: false} %>
+				<%= link_to (image_tag @article.foto4.url(:mini)),:class => 'd-block w-100', photo_article_path(4,@article.id), data: { turbolinks: false} %>
 			</div>
 		<%end%>
   </div>
