@@ -46,36 +46,6 @@
 </div>
 
 
-
-
-
-
-
-		<div id="coverslides" class="row center-xs col-xs-12 col-md-6  no-padding ">
-			<div class="<%= 'slides' unless @cont == 1 %>">
-				<% if  !@article.foto1_file_name.nil? %>
-					<%= link_to (image_tag @article.foto1.url(:mini)), photo_article_path(1,@article.id), data: { turbolinks: false}%>
-				<%end%>
-				<% if  !@article.foto2_file_name.nil? %>
-					<%= link_to (image_tag @article.foto2.url(:mini)), photo_article_path(2,@article.id), data: { turbolinks: false} %>
-				<%end%>
-				<% if  !@article.foto3_file_name.nil? %>
-					<%= link_to (image_tag @article.foto3.url(:mini)), photo_article_path(3,@article.id), data: { turbolinks: false} %>
-				<%end%>
-				<% if  !@article.foto4_file_name.nil? %>
-					<%= link_to (image_tag @article.foto4.url(:mini)), photo_article_path(4,@article.id), data: { turbolinks: false} %>
-				<%end%>
-			</div>
-			<% if @cont > 1 %>
-				<script >
-					$(function(){
-				      $(".slides").slidesjs({
-				      	
-				      });
-				    });
-				</script> 
-			<%end%>
-		</div>
 		
 		<div class="col-xs-12 field  text-justify border-5" >
 			<h4 class="no-margin letra-times-new-roman">Caracteristicas del telefono: </h4>
