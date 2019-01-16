@@ -1,5 +1,5 @@
 	<div class="row center-xs be-small" >
-		<div class="col-xs-11 col-md-7">
+		<div class="col-xs-12 col-md-7">
 			<div class=" ">	
 			<%= form_for(@publication) do |f| %>
 				<% @publication.errors.full_messages.each do |message| %>
@@ -59,7 +59,7 @@
 				<% if !publication.body.nil? %>
 					
 					<div class="row ">
-						<div class="col-xs-10 text-left letra-times-new-roman">
+						<div class="col-xs-12 text-left letra-times-new-roman">
 							<% if publication.user.photo_file_name.nil? %>
 								<%= image_tag "new_perfil_mini.png", class: "circular" %>
 							<%else%>
