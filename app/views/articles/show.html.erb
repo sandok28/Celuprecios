@@ -1,7 +1,7 @@
 
 <%= render "articles/standar" %>
 <div class="row top-space letra-lucida-grande">
-	<div class="row col-xs-6 ">
+	<div class="row col-xs-12 col-md-6 ">
 		<div class="col-xs-12">
 			<h2 class="no-margin letra-times-new-roman">
 				<%= @article.phone.name%>
@@ -12,31 +12,40 @@
 				<%= link_to (image_tag @article.foto1.url(:mini))%>
 			<%end%>
 		</div>
-		<div id="coverslides" class="col-xs-12 no-padding ">
-			<div class="<%= 'slides' unless @cont == 1 %>">
-				<% if  !@article.foto1_file_name.nil? %>
-					<%= link_to (image_tag @article.foto1.url(:mini)), photo_article_path(1,@article.id), data: { turbolinks: false}%>
-				<%end%>
-				<% if  !@article.foto2_file_name.nil? %>
-					<%= link_to (image_tag @article.foto2.url(:mini)), photo_article_path(2,@article.id), data: { turbolinks: false} %>
-				<%end%>
-				<% if  !@article.foto3_file_name.nil? %>
-					<%= link_to (image_tag @article.foto3.url(:mini)), photo_article_path(3,@article.id), data: { turbolinks: false} %>
-				<%end%>
-				<% if  !@article.foto4_file_name.nil? %>
-					<%= link_to (image_tag @article.foto4.url(:mini)), photo_article_path(4,@article.id), data: { turbolinks: false} %>
-				<%end%>
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+		<% if  !@article.foto1_file_name.nil? %>
+			<div class="carousel-item active">
+				<%= link_to (image_tag @article.foto1.url(:mini)), photo_article_path(1,@article.id), class: "d-block w-100", data: { turbolinks: false}%>
 			</div>
-			<% if @cont > 1 %>
-				<script >
-					$(function(){
-				      $(".slides").slidesjs({
-				      	
-				      });
-				    });
-				</script> 
-			<%end%>
+		<%end%>
+		<% if  !@article.foto2_file_name.nil? %>
+		<div class="carousel-item">
+			<%= link_to (image_tag @article.foto2.url(:mini)), photo_article_path(2,@article.id), class: "d-block w-100", data: { turbolinks: false} %>
 		</div>
+		<%end%>
+		<% if  !@article.foto3_file_name.nil? %>
+			<div class="carousel-item">
+				<%= link_to (image_tag @article.foto3.url(:mini)), photo_article_path(3,@article.id), class: "d-block w-100", data: { turbolinks: false} %>
+			</div>
+		<%end%>
+		<% if  !@article.foto4_file_name.nil? %>
+			<div class="carousel-item">
+				<%= link_to (image_tag @article.foto4.url(:mini)), photo_article_path(4,@article.id), class: "d-block w-100", data: { turbolinks: false} %>
+			</div>
+		<%end%>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
 		
 		<div class="col-xs-12 field  text-justify border-5" >
 			<h4 class="no-margin letra-times-new-roman">Caracteristicas del telefono: </h4>
@@ -52,8 +61,8 @@
 			<%= @article.comentario.truncate(280) %>
 		</div>
 	</div>
-	<div class="row col-xs-6 no-padding be-small">
-		<div class="col-xs-12">
+	<div class="row col-xs-12 col-md-6 no-padding be-small">
+		<div class="col-xs-12" style="padding-left: 1em;">
 			<div class="row col-xs-12 center-xs">
 				<div class="row col-xs-11 text-left be-blue letra-times-new-roman" style="border-radius: 15px; font-size: 1.5em;">
 					<div class="col-xs-2 last-xs" style="padding-top: 5px;">
@@ -125,7 +134,7 @@
 				</div>
 			</div>
 			<hr class="col-xs-12 linea">
-			<div class="row col-xs-12">
+			<div class="row col-xs-12 " style="padding-left: 1em;">
 				<h3 class="col-xs-12 no-margin letra-times-new-roman negrilla">Se entrega con</h3>
 				
 				<div class="col-xs-12 List-without-points top-space" >
@@ -221,7 +230,7 @@
 				</div>
 				
 			</div>
-			<div class="row col-xs-12 contrato-font top-space" style="padding-left: 22em;">
+			<div class="row col-xs-12 contrato-font top-space" style="padding-left: 5em;">
 				<div class="col-xs-12 "	style="margin-left: 5em;">
 					<%= image_tag "Contrato.png" %>
 				</div>
